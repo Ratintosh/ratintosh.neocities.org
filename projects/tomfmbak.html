@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Radio</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    button { margin: 4px; }
+  </style>
+</head>
+<body>
+
+<h2>📻 Web Radio</h2>
+
+<input id="playlistUrl" placeholder="YouTube Playlist URL" size="60">
+<button onclick="initRadio()">Start Radio</button>
+
+<br><br>
+
+<label>Blurbs:</label>
+<input type="file" id="blurbs" multiple accept="audio/*">
+
+<br>
+
+<label>Commercials:</label>
+<input type="file" id="ads" multiple accept="audio/*">
+
+<br><br>
+<label>Talk segments:</label>
+<input type="file" id="talk" multiple accept="audio/*">
+
+<button onclick="play()">Play</button>
+<button onclick="pause()">Pause</button>
+
+<div id="player"></div>
+
+<audio id="audio"></audio>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+/* ---------------- CONFIG ---------------- */
+
+const schedule = {
+  "schedule": [
+	{
+	  "type": "blurb",
+	  "min": 1,
+	  "max": 1
+	},
+	{
+	  "type": "music",
+	  "min": 1,
+	  "max": 1
+	},
+	{
+	  "type": "commercial",
+	  "min": 1,
+	  "max": 3
+	},
+	{
+	  "type": "talk",
+	  "min": 1,
+	  "max": 1
+	},
+	{
+	  "type": "music",
+	  "min": 1,
+	  "max": 1
+	},
+	{
+	  "type": "blurb",
+	  "min": 0,
+	  "max": 1
+	},
+	{
+	  "type": "music",
+	  "min": 0,
+	  "max": 1
+	},
+	{
+	  "type": "commercial",
+	  "min": 1,
+	  "max": 3
+	},
+	{
+	  "type": "blurb",
+	  "min": 1,
+	  "max": 1
+	},
+	{
+	  "type": "talk",
+	  "min": 1,
+	  "max": 1
+	},
+	{
+	  "type": "music",
+	  "min": 1,
+	  "max": 1
+	},
+	{
+	  "type": "commercial",
+	  "min": 1,
+	  "max": 3
+	}
+  ]
+}
+
+
+/* ---------------- STATE ---------------- */
+
+let playbackQueue = [];
+let videoIds = [];
+let player;
+let audio = document.getElementById("audio");
+
+let blurbs = [];
+let commercials = [];
+
+/* ---------------- YOUTUBE ---------------- */
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("player", {
+    height: "360",
+    width: "640",
+    playerVars: { autoplay: 0, controls: 1 },
+    events: {
+      onStateChange: e => {
+        if (e.data === YT.PlayerState.ENDED) playNext();
+      }
+    }
+  });
+}
+
+/* ---------------- RADIO LOGIC ---------------- */
+
+function initRadio() {
+  blurbs = [...document.getElementById("blurbs").files];
+  commercials = [...document.getElementById("ads").files];
+  console.log(blurbs)
+  generateSchedule();
+  loadPlaylist().then(playNext);
+}
+
+function generateSchedule() {
+  playbackQueue = [];
+
+  for (const block of schedule.schedule) {
+    const count = rand(block.min, block.max);
+    for (let i = 0; i < count; i++) {
+      playbackQueue.push(block.type);
+    }
+  }
+
+  console.log("Schedule:", playbackQueue);
+}
+
+async function loadPlaylist() {
+  const url = document.getElementById("playlistUrl").value;
+  const list = new URL(url).searchParams.get("list");
+
+  const res = await fetch(`https://corsproxy.io/?https://www.youtube.com/playlist?list=${list}`);
+  const text = await res.text();
+
+  videoIds = [...new Set(
+    [...text.matchAll(/"videoId":"(.*?)"/g)].map(m => m[1])
+  )];
+
+  shuffle(videoIds);
+}
+
+function playNext() {
+  if (playbackQueue.length === 0) {
+    generateSchedule();
+  }
+
+  const type = playbackQueue.shift();
+
+  if (type === "music") {
+    const id = videoIds.shift();
+    videoIds.push(id);
+    player.loadVideoById(id);
+  }
+
+  if (type === "blurb") {
+    playLocalRandom(blurbs);
+  }
+
+  if (type === "commercial") {
+    playLocalRandom(commercials);
+  }
+}
+
+function playLocalRandom(list) {
+  if (!list.length) return playNext();
+
+  const file = list[Math.floor(Math.random() * list.length)];
+  audio.src = URL.createObjectURL(file);
+  audio.onended = playNext;
+  audio.play();
+}
+
+/* ---------------- CONTROLS ---------------- */
+
+function play() {
+  if (player?.getPlayerState() === YT.PlayerState.PAUSED) player.playVideo();
+  audio.play();
+}
+
+function pause() {
+  player.pauseVideo();
+  audio.pause();
+}
+
+/* ---------------- UTILS ---------------- */
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+function rand(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+</script>
+
+</body>
+</html>
