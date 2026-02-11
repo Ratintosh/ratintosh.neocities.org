@@ -1,0 +1,101 @@
+#miniplay {
+    width: 18em;
+    height: 10em;
+    font-family: "Inter", serif;
+    background: #F5F5F5;
+    border: 1px solid #D6D6D6;
+    border-radius: .625rem;
+    box-shadow: inset 10px 0px 6px -10px #CCC, inset -10px 0px 6px -10px #CCC, inset 0px 10px 6px -10px #FFF, inset 0px -10px 6px -10px #CCC;
+    padding: 12px;
+    cursor: move;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+}
+
+.track-art {
+    width: 3.5em;
+    height: 3.5em;
+    object-fit: cover;
+    border-radius: 4px;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0 12px 0;
+}
+
+.current-time,
+.total-duration {
+    color: #666;
+    font-family: "Inter", serif;
+    font-size: 12px;
+    padding: 4px;
+}
+
+.seek_slider,
+.volume_slider {
+    width: 100%;
+}
+
+.seek_slider,
+.volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: #bbb;
+}
+
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+    cursor: pointer;
+}
+
+.now-playing,
+.track-name,
+.track-artist {
+    color: #555;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.now-playing {
+    display: none;
+}
+
+.bttn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.playpause-track,
+.prev-track,
+.next-track {
+    opacity: 0.5;
+    color: #000;
+    transition: opacity 0.2s;
+}
+
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover {
+    opacity: 0.8;
+}
+
+i.fa-play,
+i.fa-pause,
+.prev-track,
+.next-track {
+    cursor: pointer;
+}

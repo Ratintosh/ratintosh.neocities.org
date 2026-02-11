@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ratintosh's Site</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/musicplayer.css">
+  <link href="../css/css2.css" rel="stylesheet">
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <base target="_parent">
+  <style>
+    body,html{margin:none; padding:0px;background-color: transparent;background-image:none;}
+  </style>
+</head>
+<body>
+  <main>
+        <div class="window">
+          <div class="window-top">
+            <div class="window-title"><img src="../img/icns/social.ico" class="icon">Profile</div>
+          </div>
+          <div class="window-content">
+              <table>
+                <tr>
+                  <td><img src="../img/pfp.gif" width="64"></td>
+                  <td>
+                    <b>Ratintosh</b>
+                    <br>
+                    <i style="size:5px;">Programming Since 2014</i>
+                    <br>
+                  </td>
+                </tr>
+              </table>
+              <a href="https://oodlecat.neocities.org/"><img src="https://oodlecat.meowandsparkle.party/alive-enough/img/cliques/ds/dslite-blue.gif" title="the touch generation :: DS Lite"></a>
+              <img src="https://i.imgur.com/c15Fx3x.gif">
+              <img src="https://i.imgur.com/rM8N8bx.gif">
+              <img src="https://i.imgur.com/VWZh6pM.gif" title="CD Collector">
+              <img src="https://i.imgur.com/veRQeqP.gif" title="Synths!!">
+              <img src="https://i.imgur.com/bamwARA.gif" title="orcacreative.tk">
+              <br>
+              <img width="80px" src="https://y2k.neocities.org/stamps/tumblr_pbl4whs7Xl1wlxvjlo7_100.gif">
+              <img width="80px" src="https://y2k.neocities.org/stamps2/tumblr_pbbd1hGBbb1xz2nuuo4_100.png">
+              <img width="80px" src="https://y2k.neocities.org/stamps2/old_web_stamp_by_vtge-dcgi6h4.png">
+              <img width="80px" src="https://adriansblinkiecollection.neocities.org/stamps/e42.gif">
+              <img width="80px" src="https://hazure03.neocities.org/stamps/buycds.png">
+              <img width="80px" src="https://ratintosh.neocities.org/img/ps2stamp.png">
+              <a class="github-button" href="https://github.com/Ratintosh" aria-label="Follow @Ratintosh on GitHub">Follow @Ratintosh</a>
+              <p>------</p>
+              <img src="https://ratintosh.neocities.org/img/ratinbutton.gif">
+              <textarea rows="3">&lt;a href="https://ratintosh.neocities.org/" target="_blank"&gt;&lt;img src="https://ratintosh.neocities.org/img/ratinbutton.gif"&gt;&lt;/a&gt;
+              </textarea>    
+          </div>
+        </div>
+        <div class="window">
+          <div class="window-top">
+            <div class="window-title"><img src="../img/icns/redirect.ico" class="icon">Cool Sites</div>
+          </div>
+          <div class="window-content">
+            <table>
+              <tr>
+                <td><a href="https://hazure03.neocities.org" target="_blank"><img src="https://hazure03.neocities.org/gifs/linkbutton.gif" style="border: 0"></a></td>
+                <td><a href="https://jungl3master.neocities.org/" target="blank"><img src="https://ratintosh.neocities.org/img/buttons/jung3lmaster.gif" style="border: 0"></a></td>
+              </tr>
+              <tr>
+                <td><a href="https://warp.zone/" target="_blank"><img src="https://warp.zone/Graphix/88x31/warpzone_button.gif" alt="" style="width:88px;height:31px;border:0"></a></td>
+                <td><a href="https://kokoscript.com/" target="_blank"><img src="https://kokoscript.com/img/button/kokoscript.gif" alt="" style="width:88px;height:31px;border:0"></a></td>
+              </tr>
+							<tr>
+                <td><a href="https://arunyi.art" target="blank"><img src="https://arunyi.art/assets/images/gallery14/e8099352.gif?v=3bda7f74" style="border: 0"></a></td>
+                <td><a href="https://lazer-bunny.neocities.org/" target="_blank"><img src="https://lazer-bunny.neocities.org/Art_Storage/Pixel_Art/Button_88x31.gif" alt="" style="width:88px;height:31px;border:0"></a></td>
+              </tr>
+              <tr>
+                <td><a href="https://websetsbylynn.neocities.org/" target="_blank"><img src="https://websetsbylynn.neocities.org/images/wsbl88x31.png" alt="" style="width:88px;height:31px;border:0"></a></td>
+                <td><a href="https://greenbox.network/" target="_blank"><img src="https://greenbox.network/images/8831/current.png" alt="" style="width:88px;height:31px;border:0"></a></td>
+              </tr>
+              
+            </table>
+            
+            
+          </div>
+        </div>
+        <center>
+          <img width="128px" src="../img/dolphin.gif">
+        </center>
+        </main>
+  <script>
+    document.getElementById("play").addEventListener("click", function(){
+      document.getElementById("eq").src = "../img/eq.gif"
+      document.getElementById("nowplaying").innerHTML = "NOW PLAYING: NIGHTRIDE.FM"
+      document.getElementById("stream").play();
+      document.getElementById("pause").disabled = false;
+      document.getElementById("play").disabled = true;
+    })
+    document.getElementById("pause").addEventListener("click", function(){
+      document.getElementById("eq").src = ""
+      document.getElementById("nowplaying").innerHTML = "NOW PLAYING:"
+      document.getElementById("stream").pause();
+      document.getElementById("play").disabled = false;
+      document.getElementById("pause").disabled = true;
+    })
+  </script>
+</body>
+
+</html>

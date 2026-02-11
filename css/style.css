@@ -1,0 +1,355 @@
+/* Base styles*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --light: #d8eefb;
+  --dark: #b8e0f9;
+  --darker: #022046;
+  --cyan: #82ddf4;
+  --purple: #9c82da;
+}
+
+body {
+  background-color: #d9f8fd;
+  /* light blue */
+  background-image: url('../img/bg/vb1080.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'calibri', monospace;
+  color: #222;
+  line-height: 1.2;
+  padding: 10px;
+  margin:none;
+  padding:0px;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #00e4e41d;
+  /* background: linear-gradient(0deg,rgba(112, 255, 102, 0.133) 1%, rgba(120, 181, 255, 0.293) 100%); */
+  border: 2px solid var(--darker);
+  padding: 5px;
+  box-shadow: 0 0 5px var(--dark);
+  backdrop-filter: blur(1px);
+}
+
+/* Header */
+header {
+  text-align: center;
+  background-color: var(--dark);
+  padding: 10px;
+  background-image: url("../img/header/croppedstation1080.png");
+  background-size: cover;
+  height: 20em;
+  position:relative;
+}
+
+header h1 {
+  position:absolute;
+  color: #d6f3ffe8;
+  font-size: 8.0em;
+  font-family:'striped';
+  text-align:left;
+  bottom:0;
+  line-height:0.6;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #00364d;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Content Area */
+.content-area {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 5px;
+  align-items: flex-start;
+  /* ✅ Add this line */
+}
+
+aside {
+  flex: 0 0 200px;
+  border-radius: 8px;
+}
+
+/* Main (remaining space) */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make windows fill vertical space */
+aside .window,
+main .window {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+aside .window:not(:last-child),
+main .window:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 0.9em;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .content-area {
+    flex-direction: column;
+  }
+
+  aside,
+  main {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+}
+
+.window-content {
+  /* background-image: linear-gradient(0deg, #e9faff 25%, #d9f4fa 25%, #d9f4fa 50%, #e9faff 50%, #e9faff 75%, #d9f4fa 75%, #d9f4fa 100%);
+  background-size: 8.00px 8.00px; */
+  background: #ffffff;
+  background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgb(217, 255, 253) 100%);
+  font-size: 16px;
+  padding: 10px;
+}
+
+.right-content {
+  /* background-image: linear-gradient(0deg, #e9faff 25%, #d9f4fa 25%, #d9f4fa 50%, #e9faff 50%, #e9faff 75%, #d9f4fa 75%, #d9f4fa 100%);
+  background-size: 8.00px 8.00px; */
+  background: #ffffff;
+  font-size: 16px;
+  padding: 5px;
+}
+.navwindow {
+  background-image: linear-gradient(0deg, #e9faff 25%, #d9f4fa 25%, #d9f4fa 50%, #e9faff 50%, #e9faff 75%, #d9f4fa 75%, #d9f4fa 100%);
+  background-size: 8.00px 8.00px;
+  font-size: 16px;
+}
+
+.navitem {
+  padding:2px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap:5px;
+  background-color:#ffffff;
+}
+
+.navitem:nth-child(odd) {
+    background-color:#f8f8f8;
+}
+
+.icon {
+  width:24px;
+}
+hr {
+  border-bottom: 1px solid black;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+td {
+  vertical-align: top;
+}
+
+.cd {
+  border: 1px solid black;
+}
+
+/* Start https://www.cursors-4u.com */
+* {
+  cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur116.cur), auto !important;
+}
+
+/* End https://www.cursors-4u.com */
+
+.window {
+
+  font-family: 'calibri', monospace;
+  width: 100%;
+}
+
+/* .window-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #b8e7f2;
+      border-bottom: 2px solid #8ec3d9;
+      padding: 5px 10px;
+      
+    } */
+.window-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(184, 225, 252, 1) 0%, rgba(169, 210, 243, 1) 10%, rgba(144, 186, 228, 1) 25%, rgba(144, 188, 234, 1) 37%, rgba(144, 191, 240, 1) 50%, rgba(107, 168, 229, 1) 51%, rgba(162, 218, 245, 1) 83%, rgba(189, 243, 253, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  border-bottom: 1px solid black;
+  border-top: 1px solid white;
+  padding: 2px 3px 2px 5px;
+  color: white;
+}
+
+.window-title {
+  font-size: 16px;
+  display:flex;
+  align-items: center;
+  gap:4px;
+}
+.window-title .icon {
+  width:20px;
+}
+
+.btn {
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  background-color: #b8e7f2;
+  border: 2px solid #e7fdff;
+  color: #2b637d;
+  font-weight: bold;
+  font-size: 12px;
+  box-shadow: 2px 2px 0 #8ec3d9;
+  border-radius: 2px;
+}
+
+
+a:link {
+  text-decoration: none;
+  color: #5da6c3;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #5da6c3;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: rgb(0, 137, 196);
+}
+
+a:active {
+  text-decoration: none;
+  color: #aad1e0;
+}
+
+a img {
+  transition: transform .2s
+}
+a img:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.ratsrats {
+  width:100%;
+}
+
+iframe {
+  width:100%;
+}
+
+.notification {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+50,b5c6d0+51,e0eff9+100;Grey+Gloss+%232 */
+  background: linear-gradient(to bottom,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 51%,rgba(224,239,249,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  width:100%;
+  top:0;
+  z-index:100;
+}
+
+.navbariframe {
+  height:900px;
+  overflow:hidden;
+}
+
+.embedded-content {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+50,b5c6d0+51,e0eff9+100;Grey+Gloss+%232 */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f2f5f6+0,e3eaed+37,c8d7dc+100;Grey+3D+%234 */
+  background: linear-gradient(to bottom,  rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  width:80%;
+  height:30%;
+  padding:10px;
+  margin:10px;
+  border-radius:10px;
+  filter: drop-shadow(0px 0px 2px #c1c5d6);
+}
+
+
+.embedded-content h1{
+  color:rgb(60, 129, 159);
+}
+.embedded-content .changelog {
+  background: white;
+  border-radius:5px;
+  overflow: scroll;
+  height:300px;
+  text-align:left;
+  box-shadow: inset 0 0 10px #d0d0d0;
+  padding:10px;
+}
+
+
+.changelog p {
+  color:black;
+  border-bottom:2px solid rgb(236, 236, 236);
+}
+
+.gridFile {
+  background: none;
+  border:none;
+  margin:10px;
+  padding:10px;
+  border: 2px solid white;
+}
+
+.gridFile:hover {
+  background: rgb(228, 246, 255);
+  border: 2px dotted rgb(213, 240, 254);
+}
+
+.gridFile:active {
+  background: rgb(169, 226, 255);
+  border: 2px dotted rgb(213, 240, 254);
+}

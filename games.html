@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ratintosh's Site</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="css/css2.css" rel="stylesheet">
+  <link href="css/game.css" rel="stylesheet">
+</head>
+
+<body>
+  <div style="display:none;" id="gameWindow">
+      <div class="window-top" id="gameWindowHeader">
+        <div class="window-title"><img src="https://i.imgur.com/1D2VdVh.gif"> Game Window</div>
+      </div>
+      <iframe id="gameFrame" class="gameContent" src=""></iframe>
+    </div>
+  <div class="container">
+    <header>
+      <h1>Games</h1>
+    </header>
+
+    <div class="content-area">
+      <aside>
+        <iframe src="templates/navbar.html" style="border:none;" class="navbariframe"></iframe>
+      </aside>
+
+      <main>
+        <div class="window">
+          <div class="window-top">
+            <div class="window-title"><img src="https://i.imgur.com/1D2VdVh.gif"> Games</div>
+          </div>
+          <div class="window-content" style="background:white;">
+            <button onclick="launchBejeweled()" class="gridFile" href="google.com">
+              <img src="img/games/bejeweled.png" width="64px">
+              <p>Bejeweled</p>
+            </button>
+            <button onclick="launchMinecraft()" class="gridFile">
+              <img src="img/games/mc.ico" width="64px">
+              <p>Minecraft (Classic)</p>
+            </button>
+            <button onclick="launchDoom()" class="gridFile">
+              <img src="img/games/doom.png" width="64px">
+              <p>Doom</p>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <iframe src="templates/footer.html" style="border:none;"></iframe>
+    <script>
+      function launchBejeweled(){
+        document.getElementById("gameWindow").style = "display:block;"
+        document.getElementById("gameFrame").src = "https://en.gameslol.net/data//bejeweled-hd//index.html"
+      }
+      function launchDoom(){
+        document.getElementById("gameWindow").style = "display:block;"
+        document.getElementById("gameFrame").src = "https://silentspacemarine.com/"
+      }
+      function launchMinecraft(){
+        document.getElementById("gameWindow").style = "display:block;"
+        document.getElementById("gameFrame").src = "https://classic.minecraft.net/"
+      }
+      //Make the DIV element draggagle:
+      dragElement(document.getElementById("gameWindow"));
+
+      function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "Header")) {
+          /* if present, the header is where you move the DIV from:*/
+          document.getElementById(elmnt.id + "Header").onmousedown = dragMouseDown;
+        } else {
+          /* otherwise, move the DIV from anywhere inside the DIV:*/
+          elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // get the mouse cursor position at startup:
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          document.onmouseup = closeDragElement;
+          // call a function whenever the cursor moves:
+          document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+          e = e || window.event;
+          e.preventDefault();
+          // calculate the new cursor position:
+          pos1 = pos3 - e.clientX;
+          pos2 = pos4 - e.clientY;
+          pos3 = e.clientX;
+          pos4 = e.clientY;
+          // set the element's new position:
+          elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+          elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+          /* stop moving when mouse button is released:*/
+          document.onmouseup = null;
+          document.onmousemove = null;
+        }
+      }
+    </script>
+  </div>
+
+</body>
+
+</html>

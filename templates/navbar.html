@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ratintosh's Site</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/musicplayer.css">
+  <link href="../css/css2.css" rel="stylesheet">
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <base target="_parent">
+  <style>
+    body,html{margin:none; padding:0px;background-color: transparent;background-image:none;}
+  </style>
+</head>
+<body>
+  <main>
+        <div class="window">
+          <div class="window-top">
+            <div class="window-title"><img src="../img/icns/window.ico" class="icon">Menu</div>
+          </div>
+          <div class="navwindow">
+            <div class="navitem">
+              <img src="../img/icns/earth.ico" class="icon"><a href="../index.html">Home</a>
+            </div>
+            <div class="navitem">
+              <img src="../img/icns/media.ico" class="icon"><a href="../ratmuseum.html">Rat Museum</a>
+            </div>
+            <div class="navitem">
+              <img src="../img/icns/clock.ico" class="icon"><a href="../history.html">Site History</a>
+            </div>
+            <div class="navitem">
+              <img src="../img/icns/cd.ico" class="icon"><p style="color:rgb(172, 172, 172);">CD Collection</p>
+            </div>
+            <div class="navitem">
+              <img src="../img/icns/window.ico" class="icon"><a href="../games.html">Games</a>
+            </div>
+            <div class="navitem">
+              <img src="../img/icns/book.ico" class="icon"><a href="../guestbook.html">Guestbook</a>
+            </div>
+          </div>
+        </div>
+        <div class="window">
+          <div class="window-top">
+            <div class="window-title"><img src="../img/icns/game.ico" class="icon">Projects</div>
+          </div>
+          <div class="navwindow">
+            <div class="navitem">
+              <img src="../img/icns/folder.ico" class="icon"><a href="../projects/cowsay.html">Cowsay.js</a>
+            </div>
+            <div class="navitem">
+              <img src="../img/icns/folder.ico" class="icon"><a href="https://github.com/Ratintosh/Doomverse">Doomverse</a>
+            </div>
+            <div class="navitem">
+              <img src="../img/icns/folder.ico" class="icon"><a href="../projects/lightcycle.html">Lightcycle</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="window">
+          <div class="window-top">
+            <div class="window-title"><img src="../img/icns/book.ico" class="icon">Posts</div>
+          </div>
+          <div class="navwindow">
+            <div class="navitem">
+              <img src="../img/icns/terminal.png" class="icon"><a href="../posts/hacking/hacking.html">Hacking</a>
+            </div>
+            <div class="navitem">
+              <img src="../img/icns/usb.ico" class="icon"><a href="../posts/techstuff/index.html">Tech Stuff</a>
+            </div>
+            <!--TODO:
+              [] Add Techstuff
+              [] Add photography
+              [] Add CD collection
+              [] Add films
+            -->
+          </div>
+        </div>
+
+        <div class="window">
+          <div class="window-top">
+            <div class="window-title"><img src="../img/icns/pen.ico" class="icon">Resources</div>
+          </div>
+          <div class="navwindow">
+            <div class="navitem">
+              <img src="../img/icns/redirect.ico" class="icon"><a href="https://sadthemes.tumblr.com/smolpxl">smolpxl</a>
+            </div>
+            <div class="navitem">
+              <img src="../img/icns/redirect.ico" class="icon"><a href="https://sillyratstampscollection.neocities.org/" title="FYI: This seems to crash my browser idk why. Heads up.">Silly Rat Stamps</a>
+            </div>
+            <div class="navitem">
+              <img src="../img/icns/redirect.ico" class="icon"><a href="https://netfriend.neocities.org/">netfriend's helpers</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="window">
+          <div class="window-top">
+            <div class="window-title"><img src="../img/icns/speaker.ico" class="icon">MUSIC PLAYER</div>
+          </div>
+          <div class="window-content musicplayer">
+            <div class="screen">
+              <img id="eq" src="">
+              <p id="nowplaying">NOW PLAYING:</p>
+            </div>
+            <br>
+            <button id="play" class="playbtn"></button>
+            <button id="pause" class="pausebtn" disabled></button>
+            <audio id="stream">
+              <source src="https://stream.nightride.fm/chillsynth.mp3" type="audio/mpeg">
+              Your browser does not support the audio tag.
+            </audio> 
+              <p id="nowplaying">RADIOS:</p>
+              <select id="radioChoice" name="Category" multiple="multiple" size="4">
+                <option value="nightride">nightride.fm</option>
+                <option selected="selected" value="chillsynth">chillsynth.fm</option>
+                <option value="datawave">datawave.fm</option>
+                <option value="spacesynth">spacesynth.fm</option>
+              </select>
+          </div>
+        </div>
+        <center>
+        <img width="128px" src="../img/blobe.gif">
+        </center>
+        </main>
+  <script>
+    function playTrack(){
+      document.getElementById("eq").src = "../img/eq.gif"
+      var station = document.getElementById("radioChoice").value;
+      var url = "https://stream.nightride.fm/" + station + ".mp3" 
+      document.getElementById("nowplaying").innerHTML = "NOW PLAYING: " + station.toUpperCase() + ".FM"
+      document.getElementById("stream").src = url;
+      document.getElementById("stream").play();
+      document.getElementById("pause").disabled = false;
+      document.getElementById("play").disabled = true;
+    }
+    document.getElementById("radioChoice").addEventListener("click", function(){
+      playTrack()
+    })
+    document.getElementById("play").addEventListener("click", function(){
+      playTrack()
+    })
+    document.getElementById("pause").addEventListener("click", function(){
+      document.getElementById("eq").src = ""
+      document.getElementById("nowplaying").innerHTML = "NOW PLAYING:"
+      document.getElementById("stream").pause();
+      document.getElementById("play").disabled = false;
+      document.getElementById("pause").disabled = true;
+    })
+  </script>
+</body>
+
+</html>
