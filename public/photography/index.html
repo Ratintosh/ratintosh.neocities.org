@@ -1,6 +1,161 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <h1>Photography</h1>
-    </body>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratintosh's Site</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/musicplayer.css">
+    <link href="../css/css2.css" rel="stylesheet">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .header {
+            text-align: center;
+            padding: 32px;
+        }
+
+        .row {
+            display: -ms-flexbox;
+            /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* IE10 */
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+
+        /* Create four equal columns that sits next to each other */
+        .column {
+            -ms-flex: 25%;
+            /* IE10 */
+            flex: 25%;
+            max-width: 25%;
+            padding: 0 4px;
+        }
+
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 800px) {
+            .column {
+                -ms-flex: 50%;
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .column {
+                -ms-flex: 100%;
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+        img.square {
+            width:230px;
+            height:230px;
+            object-fit: cover;
+
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <header>
+            <h1>Photography</h1>
+
+        </header>
+        <div class="content-area">
+
+
+            <main>
+                <div class="window">
+                    <div class="window-top">
+                        <div class="window-title"><img src="https://i.imgur.com/qQbmfVU.gif"> Photography Gallery</div>
+                    </div>
+                    <div class="window-content">
+                        <a href="../index.html">[HOME]</a>
+                        <h1>Photo Gallery</h1>
+                        <p>One of my favorite things to do when I'm out and about is take pictures of interesting
+                            things. I end up with a bunch of useless photos, but from time to time I take something that
+                            I'm really proud of.</p>
+                        <br>
+                        <p>I don't use any fancy equipment for my photography, just my iPhone. Why? I have a DSLR but
+                            it's just too bulky to take everywhere. I rarely take my DSLR anywhere unless I want to take
+                            really good photos. Otherwise, the 4k camera in my iPhone does just fine and it fits in my
+                            pocket!</p>
+                        <br>
+                        <p>I like to think back to an old proverb, "A bad worksman blames his tools." Sure, you can take
+                            better photos with an expensive camera, or you can adapt to the limitations of what you have
+                            and still take great photos.</p>
+                        <br>
+                        <p>In my opinion, the best camera is the one you already have.</p>
+                        <br>
+                        <h2>Rome</h2>
+                        <div class="row">
+                            <div class="column">
+                                <img class="square" src="https://i.imgur.com/iBfpdyI.png" alt="Pond">
+                                <img class="square" src="https://i.imgur.com/ZkF4wCC.png" alt="Stairs">
+                                
+                            </div>
+                            <div class="column">
+                                <img class="square" src="https://i.imgur.com/GxFM3jp.png" alt="Arch">
+                                <img class="square" src="https://i.imgur.com/FolUbJI.png" alt="Castille">
+                            </div>
+                            <div class="column">
+                                <img class="square" src="https://i.imgur.com/ONjXvPH.png" alt="Colosseum">
+                                <img class="square" src="https://i.imgur.com/uP7Zpj5.png" alt="Tower">
+                            </div>
+                            <div class="column">
+                                <img class="square" src="https://i.imgur.com/8M8cLbt.png" alt="Lemon Tree">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <h2>Trains</h2>
+                        <div class="row">
+                            <div class="column">
+                                <img class="square" src="https://i.imgur.com/WYPhdkD.png" alt="Penn Station">
+                                <img class="square" src="https://i.imgur.com/ASDIW9y.png" alt="IND">
+                                
+                            </div>
+                            <div class="column">
+                                <img class="square" src="https://i.imgur.com/JqX7GVB.png" alt="On Time">
+                                <img class="square" src="https://i.imgur.com/BuF4rzY.png" alt="Leaving the Station">
+                            </div>
+                            <div class="column">
+                                <img class="square" src="https://i.imgur.com/Q58aHla.png" alt="Snowy Train">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <iframe src="../templates/footer.html" style="border:none;"></iframe>
+    </div>
+
+
+    <script src="visitors.js"></script>
+</body>
+
 </html>
