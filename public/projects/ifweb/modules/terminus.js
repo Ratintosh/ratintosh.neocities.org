@@ -75,7 +75,7 @@ class Terminal {
     
     async shell(prompt = "") {
         while (true) {
-            this.print(prompt + "$ ");
+            this.print(prompt + "> ");
             const input = await this.cin();
             const result = await this.parse(input);
             if (result === "exit") break;

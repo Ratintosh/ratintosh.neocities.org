@@ -59,15 +59,21 @@ function base64ToU8(base64) {
 
 async function run() {
     //motd
+    await new Promise(r => setTimeout(r, 50));
     terminal.print("+-----------------------------------+<br>")
     terminal.print("██╗███████╗██╗    ██╗███████╗██████╗ <br>██║██╔════╝██║    ██║██╔════╝██╔══██╗<br>██║█████╗  ██║ █╗ ██║█████╗  ██████╔╝<br>██║██╔══╝  ██║███╗██║██╔══╝  ██╔══██╗<br>██║██║     ╚███╔███╔╝███████╗██████╔╝<br>╚═╝╚═╝      ╚══╝╚══╝ ╚══════╝╚═════╝ <br>");
     terminal.print("+-----------------------------------+<br>")
+    await new Promise(r => setTimeout(r, 50));
     terminal.print("Interactive fiction in your browser!<br>")
     terminal.print("(c) 2026 Ratintosh<br>")
+    await new Promise(r => setTimeout(r, 50));
     terminal.print("<br>")
     terminal.print("<br>")
     terminal.print("Type \"help\" for a list of commands<br>")
     terminal.print("Type \"games\" for a list of games<br>")
+    terminal.print("<br>")
+    await new Promise(r => setTimeout(r, 500));
+    terminal.shell("guest")
     //loadZork(terminal)
 }
 
