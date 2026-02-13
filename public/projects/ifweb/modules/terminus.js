@@ -30,6 +30,7 @@ class Terminal {
             //dynamic mode (modern)
         }
         this.id = id;
+        this.shellActive = false;
         this.commandRegistry = commandRegistry || new CommandRegistry();
     }
 
@@ -41,6 +42,14 @@ class Terminal {
     print(text){
         document.getElementById(this.id).innerHTML += text
         this.scrollToBottom();
+    }
+    println(text){
+        document.getElementById(this.id).innerHTML += text + "<br>"
+        this.scrollToBottom();
+    }
+
+    killShell(){
+        this.shellActive = false;
     }
 
     async cin(){
@@ -74,11 +83,15 @@ class Terminal {
     }
     
     async shell(prompt = "") {
+        this.shellActive=true
         while (true) {
             this.print(prompt + "> ");
             const input = await this.cin();
             const result = await this.parse(input);
             if (result === "exit") break;
+            if (!this.shellActive){
+                break;
+            }
         }
     }
 

@@ -1,6 +1,32 @@
 const commands = new CommandRegistry();
 const terminal = new Terminal("terminal", commands, true, 60, 80);
 
+function dispGames(terminal){
+    terminal.println("+---------+--------------+")
+    terminal.println("| Game    | Filename     |")
+    terminal.println("+---------+--------------+")
+    terminal.println("| Zork I  | zork1        |")
+    terminal.println("+---------+--------------+")
+}
+//bios commands
+commands.register("help", (terminal) => {
+    terminal.print(" games - Lists the available game names<br>");
+    terminal.print("   (To play a game, simply type it's name)<br>");
+    terminal.print("<br>")
+    terminal.print(" info - Display information about ifweb");
+});
+
+commands.register("games", (terminal) => {
+    dispGames(terminal);
+});
+commands.register("ls", (terminal) => {
+    dispGames(terminal);
+});
+
+commands.register("zork1", (terminal) => {
+    terminal.killShell()
+    loadZork(terminal)
+});
 function escapeHtml(text) {
     return text
         .replace(/&/g, "&amp;")
