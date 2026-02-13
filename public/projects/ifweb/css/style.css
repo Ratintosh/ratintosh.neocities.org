@@ -62,6 +62,9 @@ html {
     font-size: 13px;
     overflow: scroll;
 
+    white-space: pre-wrap;
+    text-indent: 0px;
+
 }
 
 
