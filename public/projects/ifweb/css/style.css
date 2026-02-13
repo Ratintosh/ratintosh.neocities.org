@@ -47,8 +47,6 @@ html {
 
 .terminal {
     font-family: "departure";
-    background-color: rgb(0, 22, 7);
-    color: rgb(81, 255, 121);
     position: absolute;
     width: 500px;
     height: 360px;
@@ -97,3 +95,24 @@ html {
     border-color:white;
 }
 
+/*Themes*/
+.terminal.green {
+    background-color: rgb(0, 22, 7);
+    color: rgb(81, 255, 121);
+}
+
+.terminal.amber {
+    background-color: rgb(22, 13, 0);
+    color: rgb(255, 207, 62);
+}
+
+
+.terminal.blue {
+    background-color: rgb(2, 0, 22);
+    color: rgb(62, 200, 255);
+}
+
+.terminal.mono {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
