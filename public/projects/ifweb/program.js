@@ -25,6 +25,7 @@ commands.register("ls", (terminal) => {
 
 commands.register("zork1", (terminal) => {
     terminal.killShell()
+    terminal.clear()
     loadZork(terminal)
 });
 function escapeHtml(text) {
