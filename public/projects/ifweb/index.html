@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/crt.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Configure</p>
+            <hr>
+            <label for="theme">Theme:</label>
+            <select name="theme">
+                <option>Green</option>
+                <option>Amber</option>
+                <option>Black & White</option>
+            </select>
+            <br>
+            <br>
+            <label for="game">Game:</label>
+            <select name="game" disabled>
+                <option>Feature Coming Soon</option>
+            </select>
+            <hr>
+            <button id="close">Close</button>
+        </div>
+
+    </div>
+    <button id="openSettings" class="settings"></button>
+
+    <img class="monitor" src="img/tldr.png">
+    <div class="crt">
+        <div class="terminal" id="terminal">
+
+        </div>
+    </div>
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("openSettings");
+        var closebtn = document.getElementById("close");
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        closebtn.onclick = function () {
+            modal.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        } 
+    </script>
+    <script src="modules/terminus.js"></script>
+    <script src="modules/jszm.js"></script>
+    <script src="program.js"></script>
+</body>
+
+</html>
