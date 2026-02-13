@@ -60,7 +60,7 @@ function base64ToU8(base64) {
 async function run() {
     terminal.print("Loading story...<br>");
 
-    const response = await fetch("https://eblong.com/infocom/gamefiles/zork1-r119-s880429.z3");
+    const response = await fetch("zork.js");
     if (!response.ok) {
         terminal.print("Failed to load story file.<br>");
         return;
