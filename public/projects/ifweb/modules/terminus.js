@@ -39,6 +39,10 @@ class Terminal {
         el.scrollTop = el.scrollHeight;
     }
 
+    clear(){
+        document.getElementById(this.id).innerHTML = ""
+        this.scrollToBottom();
+    }
     print(text){
         document.getElementById(this.id).innerHTML += text
         this.scrollToBottom();
