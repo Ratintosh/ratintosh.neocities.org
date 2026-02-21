@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="UTF-8">
@@ -10,20 +11,34 @@
   <link href="css/css2.css" rel="stylesheet">
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <style>
+    .winamp {
+      border-image-slice: 16 4 4 4;
+      border-image-width: 16px 4px 4px 4px;
+      border-image-outset: 0px 0px 0px 0px;
+      border-image-repeat: repeat stretch;
+      border-image-source: url("data:image/gif;base64,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");
+      border-style: solid;
+
+    }
+  </style>
 </head>
+
 <body>
   <br>
   <div class="container">
     <header>
       <h1>Home</h1>
-      
+
     </header>
     <div class="notification">
-    <!--temporary-->
-      <marquee><img src="https://i.imgur.com/jGoNxYm.gif"><img src="https://i.imgur.com/bamwARA.gif"> Happy 10th anniversary Orca Creative! <img src="https://i.imgur.com/jGoNxYm.gif"><img src="https://i.imgur.com/bamwARA.gif"></marquee>
+      <!--temporary-->
+      <marquee><img src="https://i.imgur.com/jGoNxYm.gif"><img src="https://i.imgur.com/bamwARA.gif"> Happy 10th
+        anniversary Orca Creative! <img src="https://i.imgur.com/jGoNxYm.gif"><img
+          src="https://i.imgur.com/bamwARA.gif"></marquee>
     </div>
     <div class="content-area">
-      
+
       <aside>
         <iframe src="templates/navbar.html" style="border:none;" class="navbariframe"></iframe>
       </aside>
@@ -36,9 +51,11 @@
           <div class="window-content">
             <h1>- Welcome! -</h1>
             <img class="ratsrats" src="https://blob.gifcities.org/gifcities/2CPZFC3JD6C6RXT7SUQCECMYXI6H3RTL.gif">
-            <p>Welcome to ratintosh.neocities.org! This is my personal site for me to post whatever nonsense I'm up to. I go by ratintosh on most platforms, so feel free to reach out! </p>
+            <p>Welcome to ratintosh.neocities.org! This is my personal site for me to post whatever nonsense I'm up to.
+              I go by ratintosh on most platforms, so feel free to reach out! </p>
             <br>
-            <p>You are currently viewing [ v1.4 ] of my website, adapted from a template from <a href="https://websetsbylynn.neocities.org/" target="_blank">Websets by Lynn</a></p>
+            <p>You are currently viewing [ v1.4 ] of my website, adapted from a template from <a
+                href="https://websetsbylynn.neocities.org/" target="_blank">Websets by Lynn</a></p>
           </div>
         </div>
         <div class="window">
@@ -54,15 +71,19 @@
             <img class="cd" src="img/cds/while12.png" width="128">
           </div>
         </div>
-
+        <div class="winamp">
+          <p>Hello world</p>
+        </div>
         <div class="window">
           <div class="window-top">
             <div class="window-title"><img src="https://i.imgur.com/VWZh6pM.gif"> Changelog!</div>
           </div>
           <div class="window-content">
-            <p>v1.4 - Lots of new things! New <a href="guestbook.html">guestbook</a>, changes to the code, new stamps & buttons, and I even made my own button for anyone to use!</p>
+            <p>v1.4 - Lots of new things! New <a href="guestbook.html">guestbook</a>, changes to the code, new stamps &
+              buttons, and I even made my own button for anyone to use!</p>
             <p>v1.3 - Added a music player, connected to <a href="https://nightride.fm/">nighride.fm</a></p>
-            <p>v1.2 - Added <a href="lightcycle.html">lightcycle.html</a>, <a href="cowsay.html">cowsay.html</a>, and Doomverse to projects. Downscaled background & header images to 1080p (They were absurdly huge before)</p>
+            <p>v1.2 - Added <a href="lightcycle.html">lightcycle.html</a>, <a href="cowsay.html">cowsay.html</a>, and
+              Doomverse to projects. Downscaled background & header images to 1080p (They were absurdly huge before)</p>
             <p>v1.1 - Added <a href="ratmuseum.html">ratmuseum.html</a>, linked my GitHub, fixed some bugs</p>
             <p>v1.0 - Removed about button, added more graphics, cleaned things up</p>
             <p>v0.3 - Added a changelog that nobody will read!</p>
