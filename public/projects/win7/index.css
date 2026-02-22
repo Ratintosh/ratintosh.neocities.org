@@ -1,0 +1,12 @@
+body{
+    background-image: url("starfish.jpg");
+    background-size:cover;
+}
+
+#win7-title-bar {
+    cursor: move;
+}
+
+body.is-dragging-window {
+    user-select: none;
+}

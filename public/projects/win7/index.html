@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/7.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+
+        <div id="win7-window" class="window active" style="margin: 32px; width: 500px">
+        <div id="win7-title-bar" class="title-bar" draggable="false">
+            <div class="title-bar-text">
+            cbox
+            </div>
+
+            <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body has-space">
+            <iframe id="chat-frame" src="https://www3.cbox.ws/box/?boxid=3552558&boxtag=oledea" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
+        </div>
+        </div>
+
+        <script>
+            const windowEl = document.getElementById('win7-window');
+            const titleBar = document.getElementById('win7-title-bar');
+            const chatFrame = document.getElementById('chat-frame');
+
+            const rect = windowEl.getBoundingClientRect();
+            windowEl.style.position = 'absolute';
+            windowEl.style.left = `${rect.left + window.scrollX}px`;
+            windowEl.style.top = `${rect.top + window.scrollY}px`;
+            windowEl.style.margin = '0';
+
+            let isDragging = false;
+            let dragOffsetX = 0;
+            let dragOffsetY = 0;
+
+            titleBar.addEventListener('mousedown', (event) => {
+                if (event.button !== 0) {
+                    return;
+                }
+
+                isDragging = true;
+                dragOffsetX = event.clientX - windowEl.offsetLeft;
+                dragOffsetY = event.clientY - windowEl.offsetTop;
+                document.body.classList.add('is-dragging-window');
+
+                if (chatFrame) {
+                    chatFrame.style.pointerEvents = 'none';
+                }
+            });
+
+            document.addEventListener('mousemove', (event) => {
+                if (!isDragging) {
+                    return;
+                }
+
+                windowEl.style.left = `${event.clientX - dragOffsetX}px`;
+                windowEl.style.top = `${event.clientY - dragOffsetY}px`;
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (!isDragging) {
+                    return;
+                }
+
+                isDragging = false;
+                document.body.classList.remove('is-dragging-window');
+
+                if (chatFrame) {
+                    chatFrame.style.pointerEvents = '';
+                }
+            });
+        </script>
+        
+    </body>
+</html>
