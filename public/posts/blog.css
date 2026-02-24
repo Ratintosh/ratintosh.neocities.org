@@ -1,0 +1,129 @@
+:root {
+    color-scheme: light;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+    background: #fff;
+    color: #111;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.sidebar {
+    border: 1px solid #b7cad8;
+    background: linear-gradient(#dce9f3, #cfe0ec);
+}
+
+.sidebar a {
+    display: block;
+    padding: .8rem .75rem;
+    text-align: center;
+    text-decoration: none;
+    color: #173a52;
+    font-weight: 600;
+    border-bottom: 1px solid #8fb0c5;
+    background: linear-gradient(#eaf3f9, #d7e7f2);
+}
+
+.sidebar a:hover,
+.sidebar a:focus-visible {
+    background: linear-gradient(#f2f8fc, #e0edf6);
+}
+
+.sidebar a.active {
+    color: #4f7f2b;
+    background: #f6f8fa;
+}
+
+.sections {
+    border-left: 1px solid #c7d6e0;
+    padding-left: 1rem;
+}
+
+h1 {
+    margin: 0 0 1rem;
+    font-size: 1.75rem;
+}
+
+h2 {
+    margin: 0 0 .75rem;
+    font-size: 1.25rem;
+}
+
+section {
+    margin-bottom: 1.5rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: .75rem;
+}
+
+.card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #ccc;
+    padding: .75rem;
+    background: #fff;
+}
+
+.card:hover,
+.card:focus-visible {
+    border-color: #777;
+}
+
+.card img {
+    width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: .5rem;
+    border: 1px solid #e5e5e5;
+    background: #fafafa;
+}
+
+.card h3 {
+    margin: 0 0 .35rem;
+    font-size: 1rem;
+}
+
+.card p {
+    margin: 0;
+    font-size: .9rem;
+}
+
+@media (max-width: 720px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sections {
+        border-left: 0;
+        padding-left: 0;
+    }
+}
+
+iframe {
+    border:none;
+}

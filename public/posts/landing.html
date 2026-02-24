@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts Landing</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+    <main>
+        <h1>Blog Posts</h1>
+        <div class="layout">
+            <nav class="sidebar" aria-label="Post sections">
+                <a class="active" href="#latest-posts">Latest</a>
+                <a href="#hacking-posts">Hacking</a>
+                <a href="#tech-posts">Tech Stuff</a>
+            </nav>
+
+            <div class="sections">
+                <iframe src="landing/hacking.html" width="640px" height="480px"></iframe>
+
+            </div>
+        </div>
+    </main>
+    <script>
+        const navLinks = document.querySelectorAll('.sidebar a');
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                navLinks.forEach((item) => item.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
