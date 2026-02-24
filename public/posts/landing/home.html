@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts Landing</title>
+    <link rel="stylesheet" href="../blog.css">
+</head>
+
+<body>
+    <main>
+        <div class="sections">
+
+            <section aria-labelledby="latest-posts">
+                <h2 id="latest-posts">Latest</h2>
+                <div class="card-grid">
+                    <a class="card" href="hacking/neccdc/neccdc.html">
+                        <img src="../hacking/img/tux.png" alt="NECCDC 2026 thumbnail">
+                        <h3>Why Linux?</h3>
+                        <p>A quick breakdown of performance, control, and why Linux is worth trying.</p>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script>
+        const navLinks = document.querySelectorAll('.sidebar a');
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => {
+                navLinks.forEach((item) => item.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

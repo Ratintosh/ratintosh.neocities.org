@@ -13,13 +13,13 @@
         <h1>Blog Posts</h1>
         <div class="layout">
             <nav class="sidebar" aria-label="Post sections">
-                <a class="active" href="#latest-posts">Latest</a>
-                <a href="#hacking-posts">Hacking</a>
-                <a href="#tech-posts">Tech Stuff</a>
+                <a id="home" class="active" href="#latest-posts">Home</a>
+                <a id="hacking" href="#hacking-posts">Hacking</a>
+                <a id="techstuff" href="#tech-posts">Tech Stuff</a>
             </nav>
 
             <div class="sections">
-                <iframe src="landing/hacking.html" width="640px" height="480px"></iframe>
+                <iframe id="content" src="landing/home.html" width="640px" height="480px"></iframe>
 
             </div>
         </div>
@@ -30,6 +30,7 @@
             link.addEventListener('click', () => {
                 navLinks.forEach((item) => item.classList.remove('active'));
                 link.classList.add('active');
+                document.getElementById("content").src = "landing/" + link.id + ".html"
             });
         });
     </script>
