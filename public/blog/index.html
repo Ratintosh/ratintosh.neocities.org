@@ -19,7 +19,7 @@
             </nav>
 
             <div class="sections">
-                <iframe id="content" src="landing/home.html" width="640px" height="480px"></iframe>
+                <iframe id="content" src="templates/home.html" width="640px" height="480px"></iframe>
 
             </div>
         </div>
@@ -30,7 +30,7 @@
             link.addEventListener('click', () => {
                 navLinks.forEach((item) => item.classList.remove('active'));
                 link.classList.add('active');
-                document.getElementById("content").src = "landing/" + link.id + ".html"
+                document.getElementById("content").src = "templates/" + link.id + ".html"
             });
         });
     </script>
