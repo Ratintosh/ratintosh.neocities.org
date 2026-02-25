@@ -99,7 +99,8 @@ section {
 
 .card:hover,
 .card:focus-visible {
-    border-color: #777;
+    border-color: #e2e2e2;
+    text-decoration: none;
 }
 
 .card img {
