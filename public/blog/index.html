@@ -16,24 +16,30 @@
             <div class="title-bar">
                 <div class="title-bar-text">Ratintosh's Blog</div>
             </div>
-            <div class="window-body has-space">
-                <h1>Blog Posts</h1>
+            <div class="window-body">
                 <div class="layout">
+                    
                     <nav class="sidebar" aria-label="Post sections">
                         <a id="home" class="active" href="#latest-posts">Home</a>
+                        <hr>
                         <a id="hacking" href="#hacking-posts">Hacking</a>
+                        <hr>
                         <a id="techstuff" href="#tech-posts">Tech Stuff</a>
                     </nav>
 
                     <div class="sections">
-                        <iframe id="content" src="templates/home.html" height="600px"></iframe>
-
+                        <iframe id="content" src="templates/home.html"></iframe>
                     </div>
                 </div>
+
             </div>
         </div>
 
     </main>
+    <footer>
+        <p>Made with blood, sweat, and tears. Using <a href="https://khang-nd.github.io/7.css/">win7.css</a> for the windows theme.</p>
+        <p>(c) 2026 <a href="https://ratintosh.neocities.org">Ratintosh</a></p>
+    </footer>
     <script>
         const navLinks = document.querySelectorAll('.sidebar a');
         navLinks.forEach((link) => {
@@ -43,6 +49,7 @@
                 document.getElementById("content").src = "templates/" + link.id + ".html"
             });
         });
+        
     </script>
 </body>
 

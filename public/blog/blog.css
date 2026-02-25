@@ -16,19 +16,19 @@ main {
     max-width: 900px;
     margin: 0 auto;
     padding: 1rem;
-    background-color: rgb(255, 255, 255);
 }
 
 .layout {
     display: grid;
     grid-template-columns: 220px 1fr;
-    gap: 1rem;
     align-items: start;
 }
 
 .sidebar {
     border: 1px solid #b7cad8;
+    height:100%;
     background: linear-gradient(#dce9f3, #cfe0ec);
+    padding:none;
 }
 
 .sidebar a {
@@ -38,23 +38,34 @@ main {
     text-decoration: none;
     color: #173a52;
     font-weight: 600;
-    border-bottom: 1px solid #8fb0c5;
-    background: linear-gradient(#eaf3f9, #d7e7f2);
+}
+
+hr {
+    border:none;
+    background: black;
+    background: #000000;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 10%, rgb(130, 134, 166) 20%, rgb(130, 134, 166) 80%, rgba(0, 0, 0, 0) 90%);
+    height:1px;
+    margin:0px;
+    padding:none;
 }
 
 .sidebar a:hover,
 .sidebar a:focus-visible {
-    background: linear-gradient(#f2f8fc, #e0edf6);
+    text-decoration: none;
+    background: linear-gradient(90deg,rgba(224, 237, 246, 0) 0%, rgba(242, 248, 252, 0.596) 50%, rgba(224, 237, 246, 0) 100%);
 }
 
 .sidebar a.active {
+    text-decoration: none;
     color: #4f7f2b;
-    background: #f6f8fa;
+    background: linear-gradient(90deg,rgba(224, 237, 246, 0) 0%, rgba(242, 248, 252, 1) 50%, rgba(224, 237, 246, 0) 100%);
 }
 
 .sections {
     border-left: 1px solid #c7d6e0;
-    padding-left: 1rem;
+    
+
 }
 
 h1 {
@@ -124,4 +135,10 @@ section {
 
 iframe {
     border:none;
+    
+}
+
+iframe{
+    -webkit-box-shadow: inset 5px 5px 15px -3px #cecece; 
+box-shadow: inset 5px 5px 15px -3px #cecece;
 }
