@@ -1,58 +1,80 @@
-import os
 import json
 from datetime import datetime
+from pathlib import Path
 from bs4 import BeautifulSoup  # pip install beautifulsoup4
 
-POSTS_DIR = "posts"  # adjust if needed
-OUTPUT_FILE = "posts.json"
+BASE_DIR = Path(__file__).resolve().parent
+POSTS_DIR = BASE_DIR / "posts"
+OUTPUT_FILE = BASE_DIR / "posts.json"
+
+
+def get_meta_content(soup, name):
+    tag = soup.find("meta", attrs={"name": name})
+    if tag and tag.has_attr("content"):
+        content = tag["content"].strip()
+        if content:
+            return content
+    return None
+
+
+def parse_date(value):
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
 
 posts = []
 
-for category in os.listdir(POSTS_DIR):
-    cat_dir = os.path.join(POSTS_DIR, category)
-    if not os.path.isdir(cat_dir):
+for category_dir in sorted(POSTS_DIR.iterdir(), key=lambda p: p.name.lower()):
+    if not category_dir.is_dir():
         continue
 
-    for filename in os.listdir(cat_dir):
-        if not filename.endswith(".html"):
+    category = category_dir.name
+
+    for file_path in sorted(category_dir.glob("*.html"), key=lambda p: p.name.lower()):
+        if file_path.suffix.lower() != ".html":
             continue
 
-        filepath = os.path.join(cat_dir, filename)
-        slug = filename.replace(".html", "")
+        filename = file_path.name
+        slug = file_path.stem
         url = f"/blog/posts/{category}/{filename}"
 
-        with open(filepath, "r", encoding="utf-8") as f:
+        with file_path.open("r", encoding="utf-8") as f:
             soup = BeautifulSoup(f, "html.parser")
 
         # --- Title ---
-        title_meta = soup.find("meta", attrs={"name": "title"})
-        if title_meta and title_meta.has_attr("content"):
-            title = title_meta["content"].strip()
+        title_meta = get_meta_content(soup, "title")
+        if title_meta:
+            title = title_meta
         else:
             title_tag = soup.find("title") or soup.find("h1")
             title = title_tag.text.strip() if title_tag else slug.replace("-", " ").title()
 
         # --- Description ---
-        desc_meta = soup.find("meta", attrs={"name": "description"})
-        if desc_meta and desc_meta.has_attr("content"):
-            desc = desc_meta["content"].strip()
+        desc_meta = get_meta_content(soup, "description")
+        if desc_meta:
+            desc = desc_meta
         else:
             p_tag = soup.find("p")
             desc = p_tag.text.strip() if p_tag else "No description available."
 
         # --- Thumbnail ---
-        thumb_meta = soup.find("meta", attrs={"name": "thumbnail"})
-        if thumb_meta and thumb_meta.has_attr("content"):
-            thumb = thumb_meta["content"].strip()
-            print(thumb)
+        thumb_meta = get_meta_content(soup, "thumbnail")
+        if thumb_meta:
+            thumb = thumb_meta
         else:
             img_tag = soup.find("img")
             thumb = img_tag["src"] if img_tag and img_tag.has_attr("src") else "/img/blogs/default.jpg"
-            print(thumb)
 
         # --- Date ---
-        date_meta = soup.find("meta", attrs={"name": "date"})
-        date = date_meta["content"].strip() if date_meta and date_meta.has_attr("content") else datetime.today().isoformat()
+        raw_date = get_meta_content(soup, "date")
+        parsed_date = parse_date(raw_date)
+        if parsed_date is None:
+            parsed_date = datetime.fromtimestamp(file_path.stat().st_mtime)
+
+        date = parsed_date.isoformat(timespec="seconds")
 
         posts.append({
             "title": title,
@@ -65,10 +87,10 @@ for category in os.listdir(POSTS_DIR):
         })
 
 # Sort by date descending
-posts.sort(key=lambda x: x["date"], reverse=True)
+posts.sort(key=lambda x: parse_date(x["date"]) or datetime.min, reverse=True)
 
 # Write JSON
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+with OUTPUT_FILE.open("w", encoding="utf-8") as f:
     json.dump(posts, f, indent=2, ensure_ascii=False)
 
 print(f"Generated {len(posts)} posts in {OUTPUT_FILE}")
