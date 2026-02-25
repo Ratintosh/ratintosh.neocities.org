@@ -20,22 +20,60 @@
                 <div class="layout">
 
                     <nav class="sidebar" aria-label="Post sections">
-                        <a id="home" class="active" onclick="go()">Home</a>
+                        <a id="home" class="active" href="/blog/">Home</a>
                         <hr>
-                        <a id="construction" onclick="go('hacking')">Hacking</a> <!--change id to hacking when ready-->
+                        <a id="all" href="#all">All</a>
                         <hr>
-                        <a id="construction" onclick="go('techstuff')">Tech Stuff</a> <!--change id to techstuff when ready-->
+                        <a id="hacking" href="#hacking">Hacking</a>
+                        <hr>
+                        <a id="techstuff" href="#techstuff">Tech Stuff</a>
+                        <button class="sidebar-home-btn" onclick="window.location.href='/'">Back to ratintosh.neocities.org</button>
+
                     </nav>
 
                     <div class="sections">
                         <section aria-labelledby="latest-posts">
-                            
-                            <div class="card-grid" id="grid">
-                                
+                            <div class="header">
+                                <h1>Welcome to my Blog!</h1>
                             </div>
-                            <div id="content" style="display:none;"></div>
+                            <div data-home-only>
+                                <p>
+                                    Welcome to my blog, a place to read things written by me!
+                                </p>
+                                <p>
+                                    Here, you can find articles ranging from <a href="#hacking">Hacking</a> (So think
+                                    CTFs, Hackathons, and Clubs).
+                                <p>
+                                    You can also find random <a href="techstuff">Tech stuff</a>, where I post a bunch of
+                                    tech-related things like Linux tutorials and personal projects.
+                                </p>
+                                <p>
+                                    Not sure where to start? Check out one of my <b>featured posts</b> below!
+                                </p>
+                                <h2>Featured Posts:</h2>
+                            </div>
+                            <div class="card-grid" id="grid">
+                                <div class="post-card">
+                                    <a class="card" href="#techstuff/why-linux">
+                                        <img src="/img/blogs/techstuff/tux.png" alt="thumbnail">
+                                        <h3>Why Linux?</h3>
+                                        <p>A quick breakdown of performance, control, and why Linux is worth trying.</p>
+                                        <br>
+                                        <p style="color:gray">2026-02-24T22:04:52</p>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div data-home-only>
+                                <p style="color:rgb(162, 162, 162)">Made with blood, sweat, and tears. Using <a  style="color:rgb(105, 189, 228)" href="https://khang-nd.github.io/7.css/">win7.css</a> for the windows theme.
+                            <br>
+                            <br>
+                            (c) 2026 <a style="color:rgb(105, 189, 228)" href="https://ratintosh.neocities.org">Ratintosh</a></p>
+                            </div>
+                            <div id="content" style="display:block;"></div>
+                            
                         </section>
-                        
+
                     </div>
                 </div>
 
@@ -43,21 +81,6 @@
         </div>
 
     </main>
-    <footer>
-        <p>Made with blood, sweat, and tears. Using <a href="https://khang-nd.github.io/7.css/">win7.css</a> for the
-            windows theme.</p>
-        <p>(c) 2026 <a href="https://ratintosh.neocities.org">Ratintosh</a></p>
-    </footer>
-    <script>
-        const navLinks = document.querySelectorAll('.sidebar a');
-        navLinks.forEach((link) => {
-            link.addEventListener('click', () => {
-                navLinks.forEach((item) => item.classList.remove('active'));
-                link.classList.add('active');
-            });
-        });
-
-    </script>
     <script src="blog.js"></script>
 </body>
 
