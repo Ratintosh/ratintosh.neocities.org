@@ -1,6 +1,7 @@
 const contentEl = document.getElementById("content");
 const gridEl = document.getElementById("grid");
 const sidebarLinks = Array.from(document.querySelectorAll(".sidebar a"));
+const homeOnlyEls = Array.from(document.querySelectorAll("[data-home-only]"));
 
 let currentRouteToken = 0;
 
@@ -28,14 +29,36 @@ function normalizeRoute(hashValue) {
         .join("/");
 }
 
+function getActiveCategory(route) {
+    if (!route) {
+        return "";
+    }
+
+    const [category] = route.split("/");
+    return category || "";
+}
+
+function getNavTarget(link) {
+    const href = (link.getAttribute("href") || "").trim();
+    if (href.startsWith("#")) {
+        return normalizeRoute(href);
+    }
+
+    return "";
+}
+
+function setHomeOnlyVisible(isHomeRoute) {
+    homeOnlyEls.forEach(el => {
+        el.style.display = isHomeRoute ? "" : "none";
+    });
+}
+
 function updateActiveNav(route) {
-    const category = route ? route.split("/")[0] : "";
+    const activeCategory = getActiveCategory(route);
 
     sidebarLinks.forEach(link => {
-        const onclickAttr = link.getAttribute("onclick") || "";
-        const match = onclickAttr.match(/go\(['\"]?([^'\")]+)?['\"]?\)/);
-        const target = (match && match[1]) || "";
-        link.classList.toggle("active", target === category || (!target && !category));
+        const target = getNavTarget(link);
+        link.classList.toggle("active", target === activeCategory || (!target && !activeCategory));
     });
 }
 
@@ -130,47 +153,34 @@ async function loadArticle(category, slug, routeToken = 0) {
 function router() {
     const route = normalizeRoute(location.hash);
     const routeToken = ++currentRouteToken;
+    const isHomeRoute = !route;
 
     updateActiveNav(route);
+    setHomeOnlyVisible(isHomeRoute);
 
     if (!route) {
-        loadPosts(null, routeToken);
+        setView("grid");
         return;
     }
 
     const parts = route.split("/");
+    const [category, slug] = parts;
 
     if (parts.length === 1) {
-        loadPosts(parts[0], routeToken);
+        if (category === "all") {
+            loadPosts(null, routeToken);
+            return;
+        }
+        loadPosts(category, routeToken);
         return;
     }
 
-    const [category, slug] = parts;
     if (!category || !slug) {
         loadPosts(null, routeToken);
         return;
     }
 
     loadArticle(category, slug, routeToken);
-}
-
-function go(path = "") {
-    const cleanedPath = String(path || "").replace(/^#/, "");
-
-    if (!cleanedPath) {
-        if (location.hash) {
-            history.replaceState(null, "", `${location.pathname}${location.search}`);
-        }
-        router();
-        return;
-    }
-
-    if (location.hash === `#${cleanedPath}`) {
-        router();
-        return;
-    }
-
-    location.hash = cleanedPath;
 }
 
 window.addEventListener("hashchange", () => {
