@@ -139,7 +139,10 @@ iframe {
     
 }
 
-iframe{
+section{
     -webkit-box-shadow: inset 5px 5px 15px -3px #cecece; 
-box-shadow: inset 5px 5px 15px -3px #cecece;
+    box-shadow: inset 5px 5px 15px -3px #cecece;
+    padding:10px;
+    height:100%;
+    overflow:scroll;
 }
