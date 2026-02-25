@@ -5,24 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posts Landing</title>
-    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="/blog/blog.css">
+    <link rel="stylesheet" href="/blog/landing.css">
+    <link rel="stylesheet" href="https://unpkg.com/7.css">
 </head>
 
 <body>
     <main>
-        <h1>Blog Posts</h1>
-        <div class="layout">
-            <nav class="sidebar" aria-label="Post sections">
-                <a id="home" class="active" href="#latest-posts">Home</a>
-                <a id="hacking" href="#hacking-posts">Hacking</a>
-                <a id="techstuff" href="#tech-posts">Tech Stuff</a>
-            </nav>
+        <div class="window glass active" style="max-width: 100%">
+            <div class="title-bar">
+                <div class="title-bar-text">Ratintosh's Blog</div>
+            </div>
+            <div class="window-body has-space">
+                <h1>Blog Posts</h1>
+                <div class="layout">
+                    <nav class="sidebar" aria-label="Post sections">
+                        <a id="home" class="active" href="#latest-posts">Home</a>
+                        <a id="hacking" href="#hacking-posts">Hacking</a>
+                        <a id="techstuff" href="#tech-posts">Tech Stuff</a>
+                    </nav>
 
-            <div class="sections">
-                <iframe id="content" src="templates/home.html" width="640px" height="480px"></iframe>
+                    <div class="sections">
+                        <iframe id="content" src="templates/home.html" height="600px"></iframe>
 
+                    </div>
+                </div>
             </div>
         </div>
+
     </main>
     <script>
         const navLinks = document.querySelectorAll('.sidebar a');

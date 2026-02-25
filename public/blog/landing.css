@@ -1,0 +1,21 @@
+:root{
+    --background:rgb(146, 255, 202);
+    --foreground:rgba(255, 255, 255, 0.639);
+}
+
+body {
+    background-color: var(--background);
+    background-image:url("aerogradient2.png");
+    background-size:cover;
+    margin:10px;
+}
+
+main {
+    background-color: transparent;
+}
+
+
+#content {
+    width:100%;
+    height:70vh;
+}
