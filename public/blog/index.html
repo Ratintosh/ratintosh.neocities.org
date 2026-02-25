@@ -18,17 +18,24 @@
             </div>
             <div class="window-body">
                 <div class="layout">
-                    
+
                     <nav class="sidebar" aria-label="Post sections">
-                        <a id="home" class="active" href="#latest-posts">Home</a>
+                        <a id="home" class="active" onclick="go()">Home</a>
                         <hr>
-                        <a id="construction" href="#hacking-posts">Hacking</a> <!--change id to hacking when ready-->
+                        <a id="construction" onclick="go('hacking')">Hacking</a> <!--change id to hacking when ready-->
                         <hr>
-                        <a id="construction" href="#tech-posts">Tech Stuff</a> <!--change id to techstuff when ready-->
+                        <a id="construction" onclick="go('techstuff')">Tech Stuff</a> <!--change id to techstuff when ready-->
                     </nav>
 
                     <div class="sections">
-                        <iframe id="content" src="templates/home.html"></iframe>
+                        <section aria-labelledby="latest-posts">
+                            
+                            <div class="card-grid" id="grid">
+                                
+                            </div>
+                            <div id="content" style="display:none;"></div>
+                        </section>
+                        
                     </div>
                 </div>
 
@@ -37,7 +44,8 @@
 
     </main>
     <footer>
-        <p>Made with blood, sweat, and tears. Using <a href="https://khang-nd.github.io/7.css/">win7.css</a> for the windows theme.</p>
+        <p>Made with blood, sweat, and tears. Using <a href="https://khang-nd.github.io/7.css/">win7.css</a> for the
+            windows theme.</p>
         <p>(c) 2026 <a href="https://ratintosh.neocities.org">Ratintosh</a></p>
     </footer>
     <script>
@@ -46,11 +54,11 @@
             link.addEventListener('click', () => {
                 navLinks.forEach((item) => item.classList.remove('active'));
                 link.classList.add('active');
-                document.getElementById("content").src = "templates/" + link.id + ".html"
             });
         });
-        
+
     </script>
+    <script src="blog.js"></script>
 </body>
 
 </html>
