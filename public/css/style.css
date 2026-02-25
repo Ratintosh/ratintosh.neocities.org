@@ -353,3 +353,22 @@ iframe {
   background: rgb(169, 226, 255);
   border: 2px dotted rgb(213, 240, 254);
 }
+
+img.cd {
+  width:100%;
+  margin:none;
+}
+
+div.cd-Body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  align-items: start;
+  padding: 10px;
+}
+
+div.cd-Body .window {
+  max-width: none !important;
+  width: 100%;
+}
+
