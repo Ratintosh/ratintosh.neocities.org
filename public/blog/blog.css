@@ -1,0 +1,145 @@
+:root {
+    color-scheme: light;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: start;
+}
+
+.sidebar {
+    border: 1px solid #b7cad8;
+    height:100%;
+    background: linear-gradient(#dce9f3, #cfe0ec);
+    padding:none;
+}
+
+.sidebar a {
+    display: block;
+    padding: .8rem .75rem;
+    text-align: center;
+    text-decoration: none;
+    color: #173a52;
+    font-weight: 600;
+}
+
+hr {
+    border:none;
+    background: black;
+    background: #000000;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 10%, rgb(130, 134, 166) 20%, rgb(130, 134, 166) 80%, rgba(0, 0, 0, 0) 90%);
+    height:1px;
+    margin:0px;
+    padding:none;
+}
+
+.sidebar a:hover,
+.sidebar a:focus-visible {
+    text-decoration: none;
+    background: linear-gradient(90deg,rgba(224, 237, 246, 0) 0%, rgba(242, 248, 252, 0.596) 50%, rgba(224, 237, 246, 0) 100%);
+}
+
+.sidebar a.active {
+    text-decoration: none;
+    color: #4f7f2b;
+    background: linear-gradient(90deg,rgba(224, 237, 246, 0) 0%, rgba(242, 248, 252, 1) 50%, rgba(224, 237, 246, 0) 100%);
+}
+
+.sections {
+    border-left: 1px solid #c7d6e0;
+    
+
+}
+
+h1 {
+    margin: 0 0 1rem;
+    font-size: 1.75rem;
+}
+
+h2 {
+    margin: 0 0 .75rem;
+    font-size: 1.25rem;
+}
+
+section {
+    margin-bottom: 1.5rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: .75rem;
+}
+
+.card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #ccc;
+    padding: .75rem;
+    background: #fff;
+}
+
+.card:hover,
+.card:focus-visible {
+    border-color: #e2e2e2;
+    text-decoration: none;
+}
+
+.card img {
+    width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: .5rem;
+    border: 1px solid #e5e5e5;
+    background: #fafafa;
+}
+
+.card h3 {
+    margin: 0 0 .35rem;
+    font-size: 1rem;
+}
+
+.card p {
+    margin: 0;
+    font-size: .9rem;
+}
+
+@media (max-width: 720px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sections {
+        border-left: 0;
+        padding-left: 0;
+    }
+}
+
+iframe {
+    border:none;
+    
+}
+
+iframe{
+    -webkit-box-shadow: inset 5px 5px 15px -3px #cecece; 
+box-shadow: inset 5px 5px 15px -3px #cecece;
+}
