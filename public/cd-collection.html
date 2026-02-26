@@ -9,6 +9,88 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="css/css2.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/7.css">
+    <style>
+        .cd {
+            cursor: pointer;
+        }
+
+        .cd-clickable {
+            cursor: pointer;
+            transition: transform 120ms ease, filter 120ms ease;
+        }
+
+        .cd-clickable:hover {
+            transform: translateY(-10px);
+            filter: brightness(1.3);
+            cursor:pointer;
+        }
+
+        .cd-clickable:active {
+            transform: translateY(0);
+            filter: brightness(1.02);
+        }
+
+        #cd-back-modal {
+            width: min(90vw, 900px);
+            height: 82vh;
+            padding: 0;
+            border: none;
+            background: transparent;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #cd-back-modal::backdrop {
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .cd-back-window {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .cd-back-window .window-body {
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .cd-back-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            min-height: 0;
+        }
+
+        #cd-back-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        #cd-back-error {
+            display: none;
+        }
+
+        #cd-back-loading {
+            display: none;
+            color: #d9d9d9;
+            font-size: 14px;
+            letter-spacing: 0.2px;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,80 +112,254 @@
                     <div class="window-content">
                         <h1>CD Collection</h1>
                         <br>
-                        <p>Here, you can browse the songs I have on CD. Most of them are official, although a few I burned myself.</p>
+                        <p>Here, you can browse the songs I have on CD. Most of them are official, although a few I
+                            burned myself.</p>
                         <br>
-                            <div class="cd-Body">
-                                <div class="window active" style="--w7-w-bg: #000000;">
-                                    <div class="title-bar">
-                                        
-                                    </div>
-                                    <div class="window-body has-space">
-                                        <img class="cd" src="/img/cds/ram.png">
-                                        <p>Random Access Memories</p>
-                                        <p style="color:rgb(133, 133, 133)">Daft Punk</p>
-                                    </div>
+                        <br>
+                        <h2>Official Collection</h2>
+                        <br>
+                        <p>These are CDs I bought either new or used.</p>
+                        <br>
+                        <div class="cd-Body">
+                            
+                            <!--CD ENTRY-->
+                            <div class="window active" style="--w7-w-bg: #000000;">
+                                <div class="title-bar">
+
                                 </div>
-
-                                <div class="window active" style="--w7-w-bg: #000000;">
-                                    <div class="title-bar">
-                                        
-                                    </div>
-                                    <div class="window-body has-space">
-                                        <img class="cd" src="/img/cds/sehnsucht.jpg ">
-                                        <p>Sehnsucht</p>
-                                        <p style="color:rgb(133, 133, 133)">Rammstein</p>
-                                    </div>
+                                <div class="window-body has-space">
+                                    <img class="cd" src="/img/cds/sehnsucht/sehnsucht.jpg">
+                                    <p>Sehnsucht</p>
+                                    <p style="color:rgb(133, 133, 133)">Rammstein</p>
                                 </div>
-
-                                <div class="window active" style="--w7-w-bg: #000000;">
-                                    <div class="title-bar">
-                                        
-                                    </div>
-                                    <div class="window-body has-space">
-                                        <img class="cd" src="/img/cds/faithanddevotion.png">
-                                        <p>Songs of Faith and Dev...</p>
-                                        <p style="color:rgb(133, 133, 133)">Depeche Mode</p>
-                                    </div>
-                                </div>
-
-                                <div class="window active" style="--w7-w-bg: #000000;">
-                                    <div class="title-bar">
-                                        
-                                    </div>
-                                    <div class="window-body has-space">
-                                        <img class="cd" src="/img/cds/while12.png">
-                                        <p>While(1<2)</p>
-                                        <p style="color:rgb(133, 133, 133)">Deadmau5</p>
-                                    </div>
-                                </div>
-
-                                <div class="window active" style="--w7-w-bg: #000000;">
-                                    <div class="title-bar">
-                                        
-                                    </div>
-                                    <div class="window-body has-space">
-                                        <img class="cd" src="/img/cds/herzeleid.jpg">
-                                        <p>Herzeleid</p>
-                                        <p style="color:rgb(133, 133, 133)">Rammstein</p>
-                                    </div>
-                                </div>
-
-
-                                
                             </div>
-                            <br>
-                            <p>...and more. Adding them as time goes on!</p>
-                            <br>
-                            <br>
-                            <a href="/">[ Back To Home ]</a>
+
+                            <!--CD ENTRY-->
+                            <div class="window active" style="--w7-w-bg: #000000;">
+                                <div class="title-bar">
+
+                                </div>
+                                <div class="window-body has-space">
+                                    <img class="cd" src="/img/cds/reisereise/reisereise.jpg">
+                                    <p>Reise Reise</p>
+                                    <p style="color:rgb(133, 133, 133)">Rammstein</p>
+                                </div>
+                            </div>
+
+                            <!--CD ENTRY-->
+                            <div class="window active" style="--w7-w-bg: #000000;">
+                                <div class="title-bar">
+
+                                </div>
+                                <div class="window-body has-space">
+                                    <img class="cd" src="/img/cds/mutter/mutter.jpg">
+                                    <p>Mutter</p>
+                                    <p style="color:rgb(133, 133, 133)">Rammstein</p>
+                                </div>
+                            </div>
+
+                            <!--CD ENTRY-->
+                            <div class="window active" style="--w7-w-bg: #000000;">
+                                <div class="title-bar">
+
+                                </div>
+                                <div class="window-body has-space">
+                                    <img class="cd" src="/img/cds/herzeleid/herzeleid.jpg">
+                                    <p>Herzeleid</p>
+                                    <p style="color:rgb(133, 133, 133)">Rammstein</p>
+                                </div>
+                            </div>
+
+                            <!--CD ENTRY-->
+                            <div class="window active" style="--w7-w-bg: #000000;">
+                                <div class="title-bar">
+
+                                </div>
+                                <div class="window-body has-space">
+                                    <img class="cd" src="/img/cds/jgreatesthits/jgreatesthits.jpg">
+                                    <p>Greatest Hits</p>
+                                    <p style="color:rgb(133, 133, 133)">Journey</p>
+                                </div>
+                            </div>
+
+                            <!--CD ENTRY-->
+                            <div class="window active" style="--w7-w-bg: #000000;">
+                                <div class="title-bar">
+
+                                </div>
+                                <div class="window-body has-space">
+                                    <img class="cd" src="/img/cds/ultimatehits/ultimatehits.jpg">
+                                    <p>Ultimate Hits</p>
+                                    <p style="color:rgb(133, 133, 133)">Steve Miller Band</p>
+                                </div>
+                            </div>
+
+                            <!--CD ENTRY-->
+                            <div class="window active" style="--w7-w-bg: #000000;">
+                                <div class="title-bar">
+
+                                </div>
+                                <div class="window-body has-space">
+                                    <img class="cd" src="/img/cds/beatlespastmasters/beatlespastmasters.webp">
+                                    <p>Past Masters Vol II</p>
+                                    <p style="color:rgb(133, 133, 133)">The Beatles</p>
+                                </div>
+                            </div>
+
+                            <!--CD ENTRY-->
+                            <div class="window active" style="--w7-w-bg: #000000;">
+                                <div class="title-bar">
+
+                                </div>
+                                <div class="window-body has-space">
+                                    <img class="cd" src="/img/cds/c418beta/c418beta.jpg">
+                                    <p>Beta</p>
+                                    <p style="color:rgb(133, 133, 133)">C418</p>
+                                </div>
+                            </div>
+
+                            <!--CD ENTRY-->
+                            <div class="window active" style="--w7-w-bg: #000000;">
+                                <div class="title-bar">
+
+                                </div>
+                                <div class="window-body has-space">
+                                    <img class="cd" src="/img/cds/faithanddevotion/faithanddevotion.png">
+                                    <p>Songs of Faith and Dev...</p>
+                                    <p style="color:rgb(133, 133, 133)">Depeche Mode</p>
+                                </div>
+                            </div>
+
+                            <!--CD ENTRY-->
+                            <div class="window active" style="--w7-w-bg: #000000;">
+                                <div class="title-bar">
+
+                                </div>
+                                <div class="window-body has-space">
+                                    <img class="cd" src="/img/cds/queen-greatesthits/queen-greatesthits.jpg">
+                                    <p>Greatest Hits</p>
+                                    <p style="color:rgb(133, 133, 133)">Queen</p>
+                                </div>
+                            </div>
+
+                            <!--CD ENTRY-->
+                            <div class="window active" style="--w7-w-bg: #000000;">
+                                <div class="title-bar">
+
+                                </div>
+                                <div class="window-body has-space">
+                                    <img class="cd" src="/img/cds/invincibleshield/invincibleshield.jpg">
+                                    <p>Invincible Shield</p>
+                                    <p style="color:rgb(133, 133, 133)">Judas Priest</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <p>...and more. Adding them as time goes on!</p>
+                        <br>
+                        <br>
+                        <a href="/">[ Back To Home ]</a>
                     </div>
-                    
+
                 </div>
             </main>
         </div>
 
         <iframe src="templates/footer.html" style="border:none;"></iframe>
     </div>
+
+    <dialog id="cd-back-modal" aria-label="CD track list">
+        <div class="window glass active cd-back-window">
+            <div class="title-bar">
+                <div class="title-bar-text">CD Track List</div>
+                <div class="title-bar-controls">
+                    <button id="cd-back-close" type="button" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body cd-back-content">
+                <img id="cd-back-image" alt="CD back with track list">
+                <p id="cd-back-loading">Loading track list…</p>
+                <p id="cd-back-error">Track list image not found for this CD.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        (function () {
+            const modal = document.getElementById('cd-back-modal');
+            const modalImage = document.getElementById('cd-back-image');
+            const loadingText = document.getElementById('cd-back-loading');
+            const errorText = document.getElementById('cd-back-error');
+            const closeButton = document.getElementById('cd-back-close');
+            const cdCards = document.querySelectorAll('.cd-Body .window.active');
+            let activeLoadId = 0;
+
+            function openBackImage(backPath) {
+                activeLoadId += 1;
+                const loadId = activeLoadId;
+
+                errorText.style.display = 'none';
+                loadingText.style.display = 'block';
+                modalImage.style.display = 'none';
+                modalImage.removeAttribute('src');
+
+                modal.showModal();
+
+                const preload = new Image();
+                preload.onload = function () {
+                    if (loadId !== activeLoadId) {
+                        return;
+                    }
+
+                    modalImage.src = backPath;
+                    loadingText.style.display = 'none';
+                    modalImage.style.display = 'block';
+                };
+
+                preload.onerror = function () {
+                    if (loadId !== activeLoadId) {
+                        return;
+                    }
+
+                    loadingText.style.display = 'none';
+                    errorText.style.display = 'block';
+                };
+
+                preload.src = backPath;
+            }
+
+            closeButton.addEventListener('click', function () {
+                modal.close();
+            });
+
+            modal.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    modal.close();
+                }
+            });
+
+            cdCards.forEach(function (card) {
+                card.classList.add('cd-clickable');
+                card.addEventListener('click', function () {
+                    const img = card.querySelector('img.cd');
+                    if (!img) {
+                        return;
+                    }
+
+                    const src = (img.getAttribute('src') || '').trim();
+                    const lastSlash = src.lastIndexOf('/');
+                    if (lastSlash === -1) {
+                        return;
+                    }
+
+                    const folderPath = src.substring(0, lastSlash);
+                    openBackImage(folderPath + '/back.jpg');
+                });
+            });
+        })();
+    </script>
 
 </body>
 
