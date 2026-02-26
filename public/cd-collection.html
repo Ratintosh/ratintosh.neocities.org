@@ -22,7 +22,7 @@
         .cd-clickable:hover {
             transform: translateY(-10px);
             filter: brightness(1.3);
-            cursor:pointer;
+            cursor: pointer;
         }
 
         .cd-clickable:active {
@@ -90,6 +90,30 @@
             font-size: 14px;
             letter-spacing: 0.2px;
         }
+
+        .cd-player-table {
+            width: 100%;
+            border:0px;
+            font-family: 'calibri', monospace;
+            font-size: 12px;
+            table-layout: fixed;
+        }
+
+        .cd-player-text {
+            white-space: normal;
+            overflow-wrap: anywhere;
+            word-break: normal;
+        }
+
+        .content-area main .window-content {
+            font-family: 'calibri', monospace;
+            font-size: 16px;
+            line-height: 1.2;
+        }
+
+        .content-area main .window-content p {
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -110,18 +134,21 @@
                         <div class="window-title"><img src="img/icns/cd.ico" class="icon">CD Collection</div>
                     </div>
                     <div class="window-content">
-                        <h1>CD Collection</h1>
                         <br>
-                        <p>Here, you can browse the songs I have on CD. Most of them are official, although a few I
-                            burned myself.</p>
+                        <table class="cd-player-table">
+                            <tr>
+                                <td style="width:30%;"><img src="/img/cdplayer.png" style="width:100%; word-wrap: break-word"></td>
+                                <td class="cd-player-text">
+                                    <h1>CD Player</h1>
+                                    <p>Currently, my CD player is a Sony Discman DEJ011. Someone was kind enough to give it to me, and it was in excellent condition. When I first got it, the battery compartment was corroded. Not terribly shocking given its age. Thankfully, it was a pretty easy fix. I forgot what it was, but I used vinegar to clean it all up. Now it smells a bit funny, but works excellent.</p>
+                                </td>
+                            </tr>
+                        </table>
                         <br>
-                        <br>
-                        <h2>Official Collection</h2>
-                        <br>
+                        <h2>CD Collection</h2>
                         <p>These are CDs I bought either new or used.</p>
-                        <br>
                         <div class="cd-Body">
-                            
+
                             <!--CD ENTRY-->
                             <div class="window active" style="--w7-w-bg: #000000;">
                                 <div class="title-bar">
