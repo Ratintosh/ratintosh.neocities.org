@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="title" content="Samba + Winamp">
+  <meta name="thumbnail" content="/blog/thumbnails/samba.gif">
+  <meta name="description" content="My self-hosted music streaming solution (It's alright, has some flaws though.)">
+</head>
+
+<body>
+  <h1>Samba + Winamp</h1>
+  <img src="/blog/thumbnails/samba.gif" width="70%">
+  <br>
+  <br>
+  <h2>Overview</h2>
+  <p>In this article, I will go over how I was able to make my own "streaming" platform (more like network share) so I could access my music from any device. There's really not all much too it, but I think it would be cool to mention.</p>
+  <h2>Setting up Samba</h2>
+  <p>You are going to want to make sure samba is installed, which can be done by running <code>sudo apt install samba</code>. Then, you're going to want to edit your <code>/etc/samba/smb.conf</code> file in any text editor and add:</p>
+  <pre><code class="language-ini">[Music]
+   path = /path/to/Music
+   browseable = yes
+   read only = no
+   guest ok = no</code></pre>
+   <p>Next, you are going to want to set a samba password. This is what you will use to log in to your server. You can do this by running the following command:</p>
+   <pre><code>$ sudo smbpasswd -a youruser</code></pre>
+   <p>...where "youruser" is the name of your Linux user.</p>
+   <p>And now, enable your user and restart the samba service:</p>
+   <pre><code>$ sudo smbpasswd -e youruser
+$ sudo systemctl restart smbd
+$ sudo systemctl enable smbd</code></pre>
+<p>And you're halfway there! You just did the hard part. You set up your samba share, and now it's time to access it.</p>
+<h2>Accessing in Winamp</h2>
+<p>Now for the fun part: actually playing your music.</p>
+
+<p>On Windows, you can access your Samba share just like any other network drive. Open File Explorer and in the address bar, enter:</p>
+
+<pre><code>\\server-ip\Music</code></pre>
+
+<p>For example:</p>
+
+<pre><code>\\192.168.1.50\Music</code></pre>
+
+<p>You should be prompted for a username and password. Use the Samba credentials you created earlier. Once connected, you can browse your music folder as if it were local.</p>
+
+<p>To make this permanent, you can map the share as a network drive. Right click <b>This PC</b> -> <b>Map network drive</b>, choose a drive letter, and enter the same network path above. This makes the share appear like a normal hard drive on your system.</p>
+
+<p>Once that’s done, open Winamp and click on "Add folders." Then, in the file browser, navigate to your Samba share. Choose the folder you want, and press Ok. Winamp will index and play everything as if it were on your hard drive. In fact, I don't think Winamp even knows it isn't on your hard drive.</p>
+
+<h2>Drawbacks</h2>
+<p>Okay, I'm going to address the elephant in the room here. You're not actually streaming the audio. You're just requesting the data in chunks. Why does this matter? Depending on your network speed, it might take longer to fetch certain parts of the song. When this happens, you can expect a stutter. I don't really know how to get around this, but it can be mitigated by changing the buffer size in Winamp. I use 6000ms which is absurd but it works.</p>
+<p>Happy listening!</p>
+<!--END-->
+<button onclick="window.location.hash='techstuff'">Back</button>
+</body>
+
+</html>

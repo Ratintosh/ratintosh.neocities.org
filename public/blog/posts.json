@@ -1,5 +1,14 @@
 [
   {
+    "title": "Samba + Winamp",
+    "category": "techstuff",
+    "slug": "sambawinamp",
+    "date": "2026-02-26T01:39:07",
+    "desc": "My self-hosted music streaming solution (It's alright, has some flaws though.)",
+    "thumb": "/blog/thumbnails/samba.gif",
+    "url": "/blog/posts/techstuff/sambawinamp.html"
+  },
+  {
     "title": "Linux Investigation",
     "category": "hacking-notes",
     "slug": "linux-investigation",
@@ -19,11 +28,11 @@
   },
   {
     "title": "Why Linux?",
-    "category": "techstuff",
+    "category": "linux-guides",
     "slug": "why-linux",
     "date": "2026-02-25T21:38:35",
     "desc": "A quick breakdown of performance, control, and why Linux is worth trying.",
     "thumb": "/img/blogs/techstuff/tux.png",
-    "url": "/blog/posts/techstuff/why-linux.html"
+    "url": "/blog/posts/linux-guides/why-linux.html"
   }
 ]
