@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="title" content="Linux Investigation">
+    <meta name="thumbnail" content="/blog/thumbnails/linux-investigation.png">
+    <meta name="description" content="Notes on Linux investigation.">
+
+</head>
+
+<body>
+    <h1>Linux Investigation</h1>
+    <img src="/blog/thumbnails/linux-investigation.png" width="50%">
+    <br>
+    <br>
+    <h2>Overview</h2>
+    <p>Look at him, with that evil smile. Don't let that smile fool you! He may look adorable and innocent at first, but
+        once you dig deeper, you may find some problems with your Linux.</p>
+    <p>Linux is great-- when it's configured properly. In this article we're going to explore some methods of
+        investigating attacks and vulnerabilities. I will update this article as I learn more information. So without
+        further ado, let's get started!</p>
+    <p>While working, especially with a system that is live and vulnerable, I would recommend setting up a watch panel
+        so you can see who connects to your machine. This is great for CTFs and KOTHs!</p>
+    <p>Check out this useful script:</p>
+    <pre class="language-bash"><code class="language-html">#!/bin/bash
+watch -n 1 -t '
+echo "\e[1;36m=== SSH SESSIONS ===\e[0m";
+w -h | awk "{print \"\033[1;32m\" \$0 \"\033[0m\"}";
+echo;
+echo "\e[1;35m=== NETWORK CONNECTIONS (ssh + established) ===\e[0m";
+ss -tnp | grep -E "ssh|ESTAB" | awk "{print \"\033[1;34m\" \$0 \"\033[0m\"}";
+echo;
+echo "\e[1;33m=== PTYs ===\e[0m";
+ls -l /dev/pts | awk "{print \"\033[1;33m\" \$0 \"\033[0m\"}"
+'</code></pre>
+    <br>
+
+    <b>So what does it do? </b>
+    <p>It listens for SSH sessions, network connections, and active PTYs. If anyone connects or tries to connect to your
+        machine-- you'll know. It's perfect.</p>
+    <h2>Processes</h2>
+    <p>Sometimes, you can see malicious activity in your system processes. Thankfully, it's pretty easy to enumerate
+        this information and spot anomalies (provided you know what you are looking for).</p>
+    <p>You're going to want to know some basic commands for enumerating processes.</p>
+    <p><code>$ ps aux</code> lists all available processes on your machine. It can be a lot, so it's best to filter it
+        with grep.</p>
+    <p><code>$ ps -u [user]</code> limits it to a user and only them, so you can see what processes a user is running.
+    </p>
+    <p><code>$ ps -eFH</code> gives you a cohesive overview of everything.</p>
+    <br>
+    <h2>Cronjobs</h2>
+    <p>These are really sneaky, because they can run scripts in the background without you even realizing!</p>
+    <p>Cronjobs are <b>scheduled tasks</b> that are executed periodically at intervals by the cron daemon. They can be
+        found on either the system level or user level.</p>
+    <h3>System Level</h3>
+    <p><code>/etc/crontab</code> holds your system level cron jobs. Its a text file you can edit.
+
+        However, there is also a system level crontab directory located at the following locations:
+    <pre><code>/etc/cron.hourly/
+/etc/cron.daily/
+/etc/cron.d/
+/etc/cron.weekly/
+/etc/cron.monthly/
+</code></pre>
+<br>
+<h3>User Level</h3>
+<p>
+    <code>/var/spool/cron/crontabs/</code> is a directory that holds your user level cron jobs. In order to enumerate, you must be root. 
+<code>$ sudo ls -la /var/spool/cron/crontabs/</code> will then list a bunch of usernames of people who have created cron jobs (if any).
+You can see whats in their cron jobs by doing
+<code>$ sudo crontab  -l -u [user]</code>
+...or run the following script:
+</p>
+
+<pre><code>$ sudo bash -c 'for user in $(cut -f1 -d: /etc/passwd); do entries=$(crontab -u $user -l 2>/dev/null | grep -v "^#"); if [ -n "$entries" ]; then echo "$user: Crontab entry found!"; echo "$entries"; echo; fi; done'</code></pre>
+<br>
+<p>That's all for now. Again, I'll update this as I learn more information, so stay tuned!</p>
+
+<!--END-->
+<button onclick="window.location.hash='hacking-notes'">Back</button>
+</body>
+
+</html>

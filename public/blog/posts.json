@@ -1,9 +1,18 @@
 [
   {
+    "title": "Linux Investigation",
+    "category": "hacking-notes",
+    "slug": "linux-investigation",
+    "date": "2026-02-26T00:12:04",
+    "desc": "Notes on Linux investigation.",
+    "thumb": "/blog/thumbnails/linux-investigation.png",
+    "url": "/blog/posts/hacking-notes/linux-investigation.html"
+  },
+  {
     "title": "Under Construction",
     "category": "hacking",
     "slug": "construction",
-    "date": "2026-02-24T22:26:34",
+    "date": "2026-02-25T21:38:35",
     "desc": "Come back soon!",
     "thumb": "/img/blogs/default.jpg",
     "url": "/blog/posts/hacking/construction.html"
@@ -12,7 +21,7 @@
     "title": "Why Linux?",
     "category": "techstuff",
     "slug": "why-linux",
-    "date": "2026-02-24T22:04:32",
+    "date": "2026-02-25T21:38:35",
     "desc": "A quick breakdown of performance, control, and why Linux is worth trying.",
     "thumb": "/img/blogs/techstuff/tux.png",
     "url": "/blog/posts/techstuff/why-linux.html"

@@ -142,6 +142,7 @@ async function loadArticle(category, slug, routeToken = 0) {
 
         setView("content");
         contentEl.innerHTML = html;
+        hljs.highlightAll();
     } catch (error) {
         if (routeToken !== currentRouteToken) {
             return;

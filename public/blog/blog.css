@@ -179,3 +179,25 @@ iframe {
         padding-left: 0;
     }
 }
+
+code {
+    border: 1px solid rgb(50, 50, 50);
+    border-radius:5px;
+    padding:2px;
+}
+
+#content pre {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+#content pre code {
+    white-space: inherit;
+    overflow-wrap: inherit;
+}
+
+p{
+    line-height:20px;
+}
