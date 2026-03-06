@@ -1,38 +1,29 @@
 [
   {
-    "title": "Samba + Winamp",
-    "category": "techstuff",
-    "slug": "sambawinamp",
-    "date": "2026-02-26T01:39:07",
-    "desc": "My self-hosted music streaming solution (It's alright, has some flaws though.)",
-    "thumb": "/blog/assets/thumbnails/samba.gif",
-    "url": "/blog/posts/techstuff/sambawinamp.html"
-  },
-  {
     "title": "Linux Investigation",
-    "category": "hacking-notes",
+    "category": "Cybersecurity",
     "slug": "linux-investigation",
-    "date": "2026-02-26T00:58:23",
+    "date": "2026-03-06T04:50:59",
     "desc": "Notes on Linux investigation.",
     "thumb": "/blog/assets/thumbnails/linux-investigation.png",
-    "url": "/blog/posts/hacking-notes/linux-investigation.html"
+    "url": "/blog/posts/Cybersecurity/linux-investigation.html"
   },
   {
-    "title": "Under Construction",
-    "category": "hacking",
-    "slug": "construction",
-    "date": "2026-02-25T21:38:35",
-    "desc": "Come back soon!",
-    "thumb": "/img/blogs/default.jpg",
-    "url": "/blog/posts/hacking/construction.html"
+    "title": "Samba + Winamp",
+    "category": "Projects",
+    "slug": "sambawinamp",
+    "date": "2026-03-06T04:46:51",
+    "desc": "My self-hosted music streaming solution (It's alright, has some flaws though.)",
+    "thumb": "/blog/assets/thumbnails/samba.gif",
+    "url": "/blog/posts/Projects/sambawinamp.html"
   },
   {
     "title": "Why Linux?",
-    "category": "linux-guides",
+    "category": "Misc",
     "slug": "why-linux",
     "date": "2026-02-25T21:38:35",
     "desc": "A quick breakdown of performance, control, and why Linux is worth trying.",
     "thumb": "/img/blogs/techstuff/tux.png",
-    "url": "/blog/posts/linux-guides/why-linux.html"
+    "url": "/blog/posts/Misc/why-linux.html"
   }
 ]
