@@ -36,18 +36,39 @@ main {
 .sidebar-home-btn {
     margin-top: auto;
     margin-bottom: 0.75rem;
-    align-self: center;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    align-self: stretch;
     padding: 0.45rem 0.8rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+.sidebar-rss-btn {
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+    align-self: stretch;
+    padding: 0.45rem 0.8rem;
+    text-align: left;
     cursor: pointer;
 }
 
 .sidebar a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.35rem;
     padding: 0.8rem 0.75rem;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
     color: #173a52;
     font-weight: 600;
+}
+
+.sidebar a img {
+    display: block;
 }
 
 hr {
@@ -200,4 +221,8 @@ code {
 
 p{
     line-height:20px;
+}
+
+.blogicon{
+    width:16px;
 }

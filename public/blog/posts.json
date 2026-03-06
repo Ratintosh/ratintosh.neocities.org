@@ -1,5 +1,14 @@
 [
   {
+    "title": "Samba + Winamp",
+    "category": "Projects",
+    "slug": "sambawinamp",
+    "date": "2026-03-06T05:12:39",
+    "desc": "My self-hosted music streaming solution (It's alright, has some flaws though.)",
+    "thumb": "/blog/assets/thumbnails/samba.gif",
+    "url": "/blog/posts/Projects/sambawinamp.html"
+  },
+  {
     "title": "Linux Investigation",
     "category": "Cybersecurity",
     "slug": "linux-investigation",
@@ -7,15 +16,6 @@
     "desc": "Notes on Linux investigation.",
     "thumb": "/blog/assets/thumbnails/linux-investigation.png",
     "url": "/blog/posts/Cybersecurity/linux-investigation.html"
-  },
-  {
-    "title": "Samba + Winamp",
-    "category": "Projects",
-    "slug": "sambawinamp",
-    "date": "2026-03-06T04:46:51",
-    "desc": "My self-hosted music streaming solution (It's alright, has some flaws though.)",
-    "thumb": "/blog/assets/thumbnails/samba.gif",
-    "url": "/blog/posts/Projects/sambawinamp.html"
   },
   {
     "title": "Why Linux?",

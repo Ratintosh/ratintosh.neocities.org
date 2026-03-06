@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ratintosh's Blog</title>
+    <link rel="alternate" type="application/rss+xml" title="Ratintosh's Blog RSS" href="/blog/rss.xml">
     <link rel="stylesheet" href="/blog/css/blog.css">
     <link rel="stylesheet" href="/blog/css/landing.css">
     <link rel="stylesheet" href="https://unpkg.com/7.css">
@@ -22,15 +23,17 @@
                 <div class="layout">
 
                     <nav class="sidebar" aria-label="Post sections">
-                        <a id="home" class="active" href="/blog/">Home</a>
+                        <a id="home" class="active" href="/blog/"><img src="/blog/assets/icons/home.ico" class="blogicon"> Home</a>
                         <hr>
-                        <a id="all" href="#all">All</a>
+                        <a id="all" href="#all"><img src="/blog/assets/icons/all.ico" class="blogicon"> All</a>
                         <hr>
-                        <a id="techstuff" href="#Projects">Projects</a>
+                        <a id="techstuff" href="#Projects"><img src="/blog/assets/icons/projects.ico" class="blogicon"> Projects</a>
                         <hr>
-                        <a id="techstuff" href="#Cybersecurity">Cybersecurity</a>
+                        <a id="techstuff" href="#Cybersecurity"><img src="/blog/assets/icons/firewall2.ico" class="blogicon"> Cybersecurity</a>
                         <hr>
-                        <a id="hacking" href="#Misc">Misc</a>
+                        <a id="hacking" href="#Misc"><img src="/blog/assets/icons/misc.ico" class="blogicon"> Misc</a>
+
+                        <button type="button" class="sidebar-rss-btn" onclick="window.location.href='/blog/rss.xml'">Subscribe to RSS</button>
 
                         <button class="sidebar-home-btn" onclick="window.location.href='/'">Back to ratintosh.neocities.org</button>
 
@@ -46,11 +49,11 @@
                                     Welcome to my blog, a place to read things written by me!
                                 </p>
                                 <p>
-                                    Here, you can find articles, such as <a href="#hacking">Hacking</a> (Think
-                                    CTFs, Hackathons, and Clubs).
+                                    Here, you can find articles on various topics, such as <a href="#Cybersecurity">Cybersecurity</a> (Think notes from
+                                    CTFs, Hackathons, and Clubs)
                                 <p>
-                                    You can also find random articles on <a href="techstuff">Tech stuff</a>, where I post a bunch of
-                                    tech-related things such as Linux tutorials and personal projects.
+                                    You can also find random projects im working on in <a href="#Projects">Projects</a>. Check out my samba + winamp setup! It's pretty cool!
+                                    In addition, you can now leave comments on any of my articles! Love hearing what people have to say. Please be respectful!
                                 </p>
                                 <p>
                                     Not sure where to start? Check out one of my <b>featured posts</b> below!
@@ -59,10 +62,10 @@
                             </div>
                             <div class="card-grid" id="grid">
                                 <div class="post-card">
-                                    <a class="card" href="#linux-guides/why-linux">
-                                        <img src="/img/blogs/techstuff/tux.png" alt="thumbnail">
-                                        <h3>Why Linux?</h3>
-                                        <p>A quick breakdown of performance, control, and why Linux is worth trying.</p>
+                                    <a class="card" href="#Projects/sambawinamp">
+                                        <img src="/blog/assets/thumbnails/samba.gif" alt="thumbnail">
+                                        <h3>Samba + Winamp</h3>
+                                        <p>My self-hosted music streaming solution (It's alright, has some flaws though.)</p>
                                         <br>
                                         <p style="color:gray">2026-02-24T22:04:52</p>
                                     </a>
@@ -71,8 +74,7 @@
                             </div>
                             <div data-home-only>
                                 <p style="color:rgb(162, 162, 162)">Made with blood, sweat, and tears. Using <a  style="color:rgb(105, 189, 228)" href="https://khang-nd.github.io/7.css/">win7.css</a> for the windows theme.
-                            <br>
-                            <br>
+                                    <br>
                             (c) 2026 <a style="color:rgb(105, 189, 228)" href="https://ratintosh.neocities.org">Ratintosh</a></p>
                             </div>
                             <div id="content" style="display:block;"></div>

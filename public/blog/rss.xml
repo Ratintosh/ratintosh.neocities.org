@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Ratintosh's Blog</title>
+    <link>https://ratintosh.neocities.org/blog/</link>
+    <description>Articles, projects, and notes from Ratintosh.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 Mar 2026 05:22:24 -0500</lastBuildDate>
+    <generator>scripts/gen.py</generator>
+    <atom:link href="https://ratintosh.neocities.org/blog/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Samba + Winamp</title>
+      <link>https://ratintosh.neocities.org/blog/posts/Projects/sambawinamp.html</link>
+      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Projects/sambawinamp.html</guid>
+      <description>My self-hosted music streaming solution (It's alright, has some flaws though.)</description>
+      <category>Projects</category>
+      <pubDate>Fri, 06 Mar 2026 05:12:39 -0500</pubDate>
+    </item>
+    <item>
+      <title>Linux Investigation</title>
+      <link>https://ratintosh.neocities.org/blog/posts/Cybersecurity/linux-investigation.html</link>
+      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Cybersecurity/linux-investigation.html</guid>
+      <description>Notes on Linux investigation.</description>
+      <category>Cybersecurity</category>
+      <pubDate>Fri, 06 Mar 2026 04:50:59 -0500</pubDate>
+    </item>
+    <item>
+      <title>Why Linux?</title>
+      <link>https://ratintosh.neocities.org/blog/posts/Misc/why-linux.html</link>
+      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Misc/why-linux.html</guid>
+      <description>A quick breakdown of performance, control, and why Linux is worth trying.</description>
+      <category>Misc</category>
+      <pubDate>Wed, 25 Feb 2026 21:38:35 -0500</pubDate>
+    </item>
+  </channel>
+</rss>
