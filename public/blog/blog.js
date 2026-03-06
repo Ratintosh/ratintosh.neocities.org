@@ -1,5 +1,6 @@
 const contentEl = document.getElementById("content");
 const gridEl = document.getElementById("grid");
+const sectionHeaderEl = document.getElementById("section-header");
 const sidebarLinks = Array.from(document.querySelectorAll(".sidebar a"));
 const homeOnlyEls = Array.from(document.querySelectorAll("[data-home-only]"));
 const gridOnlyEls = Array.from(document.querySelectorAll("[data-grid-only]"));
@@ -51,6 +52,36 @@ function setHomeOnlyVisible(isHomeRoute) {
     homeOnlyEls.forEach(el => {
         el.style.display = isHomeRoute ? "" : "none";
     });
+}
+
+function getGridHeaderTitle(route) {
+    if (!route) {
+        return "Home";
+    }
+
+    const parts = route.split("/");
+    if (parts.length !== 1) {
+        return "Home";
+    }
+
+    const [category] = parts;
+    if (!category) {
+        return "Home";
+    }
+
+    if (category.toLowerCase() === "all") {
+        return "All Posts";
+    }
+
+    return `${category} Posts`;
+}
+
+function updateGridHeader(route) {
+    if (!sectionHeaderEl) {
+        return;
+    }
+
+    sectionHeaderEl.textContent = getGridHeaderTitle(route);
 }
 
 function updateActiveNav(route) {
@@ -156,6 +187,7 @@ function router() {
     const routeToken = ++currentRouteToken;
     const isHomeRoute = !route;
 
+    updateGridHeader(route);
     updateActiveNav(route);
     setHomeOnlyVisible(isHomeRoute);
 
