@@ -4,8 +4,8 @@ from pathlib import Path
 from bs4 import BeautifulSoup  # pip install beautifulsoup4
 
 BASE_DIR = Path(__file__).resolve().parent
-POSTS_DIR = BASE_DIR / "posts"
-OUTPUT_FILE = BASE_DIR / "posts.json"
+POSTS_DIR = BASE_DIR / "../posts"
+OUTPUT_FILE = BASE_DIR / "../posts.json"
 
 
 def get_meta_content(soup, name):

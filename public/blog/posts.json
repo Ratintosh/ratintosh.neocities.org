@@ -5,7 +5,7 @@
     "slug": "sambawinamp",
     "date": "2026-02-26T01:39:07",
     "desc": "My self-hosted music streaming solution (It's alright, has some flaws though.)",
-    "thumb": "/blog/thumbnails/samba.gif",
+    "thumb": "/blog/assets/thumbnails/samba.gif",
     "url": "/blog/posts/techstuff/sambawinamp.html"
   },
   {
@@ -14,7 +14,7 @@
     "slug": "linux-investigation",
     "date": "2026-02-26T00:58:23",
     "desc": "Notes on Linux investigation.",
-    "thumb": "/blog/thumbnails/linux-investigation.png",
+    "thumb": "/blog/assets/thumbnails/linux-investigation.png",
     "url": "/blog/posts/hacking-notes/linux-investigation.html"
   },
   {
