@@ -2,18 +2,18 @@ const contentEl = document.getElementById("content");
 const gridEl = document.getElementById("grid");
 const sidebarLinks = Array.from(document.querySelectorAll(".sidebar a"));
 const homeOnlyEls = Array.from(document.querySelectorAll("[data-home-only]"));
+const gridOnlyEls = Array.from(document.querySelectorAll("[data-grid-only]"));
 
 let currentRouteToken = 0;
 
 function setView(mode) {
-    if (mode === "content") {
-        contentEl.style.display = "block";
-        gridEl.style.display = "none";
-        return;
-    }
+    const isContentMode = mode === "content";
 
-    contentEl.style.display = "none";
-    gridEl.style.display = "grid";
+    contentEl.style.display = isContentMode ? "block" : "none";
+    gridEl.style.display = isContentMode ? "none" : "grid";
+    gridOnlyEls.forEach(el => {
+        el.style.display = isContentMode ? "none" : "";
+    });
 }
 
 function normalizeRoute(hashValue) {

@@ -23,6 +23,7 @@
                 <div class="layout">
 
                     <nav class="sidebar" aria-label="Post sections">
+                        <button class="sidebar-home-btn" onclick="window.location.href='/'">Back to ratintosh.neocities.org</button>
                         <a id="home" class="active" href="/blog/"><img src="/blog/assets/icons/home.ico" class="blogicon"> Home</a>
                         <hr>
                         <a id="all" href="#all"><img src="/blog/assets/icons/all.ico" class="blogicon"> All</a>
@@ -33,16 +34,14 @@
                         <hr>
                         <a id="hacking" href="#Misc"><img src="/blog/assets/icons/misc.ico" class="blogicon"> Misc</a>
 
-                        <button type="button" class="sidebar-rss-btn" onclick="window.location.href='/blog/rss.xml'">Subscribe to RSS</button>
-
-                        <button class="sidebar-home-btn" onclick="window.location.href='/'">Back to ratintosh.neocities.org</button>
+                    
 
                     </nav>
 
                     <div class="sections">
                         <section aria-labelledby="latest-posts">
                             <div class="header">
-                                <h1>Welcome to my Blog!</h1>
+                                <h1>Welcome to my Blog! <a href="/blog/rss.xml"><img src="/blog/assets/icons/rss.png" width="16px"></a></h1>
                             </div>
                             <div data-home-only>
                                 <p>
@@ -70,12 +69,12 @@
                                         <p style="color:gray">2026-02-24T22:04:52</p>
                                     </a>
                                 </div>
-
                             </div>
-                            <div data-home-only>
+                            <div data-grid-only>
+                                
                                 <p style="color:rgb(162, 162, 162)">Made with blood, sweat, and tears. Using <a  style="color:rgb(105, 189, 228)" href="https://khang-nd.github.io/7.css/">win7.css</a> for the windows theme.
                                     <br>
-                            (c) 2026 <a style="color:rgb(105, 189, 228)" href="https://ratintosh.neocities.org">Ratintosh</a></p>
+                            (c) 2026 <a style="color:rgb(105, 189, 228)" href="https://ratintosh.neocities.org">Ratintosh</a> </p> 
                             </div>
                             <div id="content" style="display:block;"></div>
                             
