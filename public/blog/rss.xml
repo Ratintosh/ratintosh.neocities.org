@@ -5,9 +5,17 @@
     <link>https://ratintosh.neocities.org/blog/</link>
     <description>Articles, projects, and notes from Ratintosh.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Mar 2026 05:22:24 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2026 05:57:58 -0500</lastBuildDate>
     <generator>scripts/gen.py</generator>
     <atom:link href="https://ratintosh.neocities.org/blog/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Now on IRC</title>
+      <link>https://ratintosh.neocities.org/blog/posts/Misc/now-on-irc.html</link>
+      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Misc/now-on-irc.html</guid>
+      <description>Ratintosh joins IRC!&lt;br&gt;</description>
+      <category>Misc</category>
+      <pubDate>Fri, 06 Mar 2026 05:51:24 -0500</pubDate>
+    </item>
     <item>
       <title>Samba + Winamp</title>
       <link>https://ratintosh.neocities.org/blog/posts/Projects/sambawinamp.html</link>

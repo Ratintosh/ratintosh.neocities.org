@@ -1,5 +1,14 @@
 [
   {
+    "title": "Now on IRC",
+    "category": "Misc",
+    "slug": "now-on-irc",
+    "date": "2026-03-06T05:51:24",
+    "desc": "Ratintosh joins IRC!<br>",
+    "thumb": "/blog/assets/thumbnails/now-on-irc.gif",
+    "url": "/blog/posts/Misc/now-on-irc.html"
+  },
+  {
     "title": "Samba + Winamp",
     "category": "Projects",
     "slug": "sambawinamp",
