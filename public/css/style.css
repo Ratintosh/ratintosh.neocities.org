@@ -299,7 +299,7 @@ iframe {
 }
 
 .navbariframe {
-  height:980px;
+  height:1150px;
   overflow:hidden;
 }
 
@@ -450,3 +450,14 @@ grid-row-gap: 4px;
   }
 }
 
+#statuscafe {
+    padding: .5em;
+    background-color: azure;
+    border: 1px solid midnightblue;
+}
+#statuscafe-username {
+    margin-bottom: .5em;
+}
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
+}
