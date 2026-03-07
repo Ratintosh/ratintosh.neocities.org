@@ -251,6 +251,33 @@ code {
     overflow-wrap: inherit;
 }
 
+#content img,
+#content video,
+#content iframe,
+#content table {
+    max-width: 100%;
+}
+
+#content img,
+#content video {
+    height: auto;
+}
+
+#content figure {
+    margin: 1rem 0;
+    max-width: 100%;
+}
+
+#content p,
+#content li,
+#content figcaption,
+#content h1,
+#content h2,
+#content h3 {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 p{
     line-height:20px;
 }
