@@ -5,7 +5,7 @@
     <link>https://ratintosh.neocities.org/blog/</link>
     <description>Articles, projects, and notes from Ratintosh.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Mar 2026 21:11:38 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2026 21:15:07 -0400</lastBuildDate>
     <generator>scripts/gen.py</generator>
     <atom:link href="https://ratintosh.neocities.org/blog/rss.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,7 +14,7 @@
       <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Projects/ratintosh-dev.html</guid>
       <description>My story of trying to get nginx working.</description>
       <category>Projects</category>
-      <pubDate>Sat, 14 Mar 2026 21:11:36 -0400</pubDate>
+      <pubDate>Sat, 14 Mar 2026 21:15:05 -0400</pubDate>
     </item>
     <item>
       <title>Now on IRC</title>

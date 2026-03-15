@@ -96,8 +96,8 @@ At first I assumed it was a simple permissions issue. nginx couldn’t read the 
 </p>
 
 <ul>
-<li>changing file permissions with <code>chmod</code></li>
-<li>changing ownership with <code>chown</code></li>
+<li>changing file permissions with chmod</li>
+<li>changing ownership with chown</li>
 <li>moving the files to different directories</li>
 <li>making sure the nginx user had access</li>
 </ul>
@@ -178,10 +178,10 @@ The next day I came back with and decided to just recreate the structure most gu
 <p>So I:</p>
 
 <ul>
-<li>created a <code>/var/www/</code> directory for site files</li>
-<li>added <code>sites-available</code> and <code>sites-enabled</code></li>
+<li>created a /var/www/ directory for site files</li>
+<li>added sites-available and sites-enabled</li>
 <li>created a new nginx config for my domain</li>
-<li>symlinked it into <code>sites-enabled</code></li>
+<li>symlinked it into sites-enabled</li>
 <li>pointed it to my SSL certificates</li>
 </ul>
 
@@ -190,7 +190,7 @@ After a bit more troubleshooting (and more SELinux adjustments), everything fina
 </p>
 
 <p>
-I could now serve my own <code>index.html</code> from <strong>ratintosh.dev</strong>.
+I could now serve my own index.html from <strong>ratintosh.dev</strong>.
 </p>
 
 <p>
@@ -227,5 +227,8 @@ Even if the process was painful.
 
 </article>
 
+<!--END-->
+<button onclick="window.location.hash='Projects'">Back</button>
+<p style="color:gray">(c) 2026 Ratintosh</p>
 </body>
 </html>
