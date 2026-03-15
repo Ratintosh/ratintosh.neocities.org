@@ -5,40 +5,16 @@
     <link>https://ratintosh.neocities.org/blog/</link>
     <description>Articles, projects, and notes from Ratintosh.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Mar 2026 04:30:07 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2026 21:11:38 -0400</lastBuildDate>
     <generator>scripts/gen.py</generator>
     <atom:link href="https://ratintosh.neocities.org/blog/rss.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Repairing a Nintendo Entertainment System</title>
-      <link>https://ratintosh.neocities.org/blog/posts/Projects/repairing-a-nintendo-entertainment-system.html</link>
-      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Projects/repairing-a-nintendo-entertainment-system.html</guid>
-      <description>How I fixed a console from the 80s</description>
+      <title>Ratintosh.dev</title>
+      <link>https://ratintosh.neocities.org/blog/posts/Projects/ratintosh-dev.html</link>
+      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Projects/ratintosh-dev.html</guid>
+      <description>My story of trying to get nginx working.</description>
       <category>Projects</category>
-      <pubDate>Sat, 07 Mar 2026 03:47:46 -0500</pubDate>
-    </item>
-    <item>
-      <title>Samba + Winamp</title>
-      <link>https://ratintosh.neocities.org/blog/posts/Projects/sambawinamp.html</link>
-      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Projects/sambawinamp.html</guid>
-      <description>My self-hosted music streaming solution (It's alright, has some flaws though.)</description>
-      <category>Projects</category>
-      <pubDate>Fri, 06 Mar 2026 06:06:56 -0500</pubDate>
-    </item>
-    <item>
-      <title>Why Linux?</title>
-      <link>https://ratintosh.neocities.org/blog/posts/Misc/why-linux.html</link>
-      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Misc/why-linux.html</guid>
-      <description>A quick breakdown of performance, control, and why Linux is worth trying.</description>
-      <category>Misc</category>
-      <pubDate>Fri, 06 Mar 2026 06:06:24 -0500</pubDate>
-    </item>
-    <item>
-      <title>Linux Investigation</title>
-      <link>https://ratintosh.neocities.org/blog/posts/Cybersecurity/linux-investigation.html</link>
-      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Cybersecurity/linux-investigation.html</guid>
-      <description>Notes on Linux investigation.</description>
-      <category>Cybersecurity</category>
-      <pubDate>Fri, 06 Mar 2026 06:06:05 -0500</pubDate>
+      <pubDate>Sat, 14 Mar 2026 21:11:36 -0400</pubDate>
     </item>
     <item>
       <title>Now on IRC</title>
@@ -46,7 +22,39 @@
       <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Misc/now-on-irc.html</guid>
       <description>Ratintosh joins IRC!</description>
       <category>Misc</category>
-      <pubDate>Fri, 06 Mar 2026 05:51:24 -0500</pubDate>
+      <pubDate>Sat, 14 Mar 2026 20:36:58 -0400</pubDate>
+    </item>
+    <item>
+      <title>Samba + Winamp</title>
+      <link>https://ratintosh.neocities.org/blog/posts/Projects/sambawinamp.html</link>
+      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Projects/sambawinamp.html</guid>
+      <description>My self-hosted music streaming solution (It's alright, has some flaws though.)</description>
+      <category>Projects</category>
+      <pubDate>Sat, 14 Mar 2026 20:36:55 -0400</pubDate>
+    </item>
+    <item>
+      <title>Repairing a Nintendo Entertainment System</title>
+      <link>https://ratintosh.neocities.org/blog/posts/Projects/repairing-a-nintendo-entertainment-system.html</link>
+      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Projects/repairing-a-nintendo-entertainment-system.html</guid>
+      <description>How I fixed a console from the 80s</description>
+      <category>Projects</category>
+      <pubDate>Sat, 14 Mar 2026 20:36:52 -0400</pubDate>
+    </item>
+    <item>
+      <title>Why Linux?</title>
+      <link>https://ratintosh.neocities.org/blog/posts/Misc/why-linux.html</link>
+      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Misc/why-linux.html</guid>
+      <description>A quick breakdown of performance, control, and why Linux is worth trying.</description>
+      <category>Misc</category>
+      <pubDate>Sat, 14 Mar 2026 20:36:25 -0400</pubDate>
+    </item>
+    <item>
+      <title>Linux Investigation</title>
+      <link>https://ratintosh.neocities.org/blog/posts/Cybersecurity/linux-investigation.html</link>
+      <guid isPermaLink="true">https://ratintosh.neocities.org/blog/posts/Cybersecurity/linux-investigation.html</guid>
+      <description>Notes on Linux investigation.</description>
+      <category>Cybersecurity</category>
+      <pubDate>Sat, 14 Mar 2026 20:36:15 -0400</pubDate>
     </item>
   </channel>
 </rss>

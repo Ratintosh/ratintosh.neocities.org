@@ -1,27 +1,45 @@
 [
   {
-    "title": "Repairing a Nintendo Entertainment System",
+    "title": "Ratintosh.dev",
     "category": "Projects",
-    "slug": "repairing-a-nintendo-entertainment-system",
-    "date": "2026-03-07T03:47:46",
-    "desc": "How I fixed a console from the 80s",
-    "thumb": "/blog/assets/thumbnails/NESrepair.gif",
-    "url": "/blog/posts/Projects/repairing-a-nintendo-entertainment-system.html"
+    "slug": "ratintosh-dev",
+    "date": "2026-03-14T21:11:36",
+    "desc": "My story of trying to get nginx working.",
+    "thumb": "/blog/assets/thumbnails/nginx.png",
+    "url": "/blog/posts/Projects/ratintosh-dev.html"
+  },
+  {
+    "title": "Now on IRC",
+    "category": "Misc",
+    "slug": "now-on-irc",
+    "date": "2026-03-14T20:36:58",
+    "desc": "Ratintosh joins IRC!",
+    "thumb": "/blog/assets/thumbnails/now-on-irc.gif",
+    "url": "/blog/posts/Misc/now-on-irc.html"
   },
   {
     "title": "Samba + Winamp",
     "category": "Projects",
     "slug": "sambawinamp",
-    "date": "2026-03-06T06:06:56",
+    "date": "2026-03-14T20:36:55",
     "desc": "My self-hosted music streaming solution (It's alright, has some flaws though.)",
     "thumb": "/blog/assets/thumbnails/samba.gif",
     "url": "/blog/posts/Projects/sambawinamp.html"
   },
   {
+    "title": "Repairing a Nintendo Entertainment System",
+    "category": "Projects",
+    "slug": "repairing-a-nintendo-entertainment-system",
+    "date": "2026-03-14T20:36:52",
+    "desc": "How I fixed a console from the 80s",
+    "thumb": "/blog/assets/thumbnails/NESrepair.gif",
+    "url": "/blog/posts/Projects/repairing-a-nintendo-entertainment-system.html"
+  },
+  {
     "title": "Why Linux?",
     "category": "Misc",
     "slug": "why-linux",
-    "date": "2026-03-06T06:06:24",
+    "date": "2026-03-14T20:36:25",
     "desc": "A quick breakdown of performance, control, and why Linux is worth trying.",
     "thumb": "/img/blogs/techstuff/tux.png",
     "url": "/blog/posts/Misc/why-linux.html"
@@ -30,18 +48,9 @@
     "title": "Linux Investigation",
     "category": "Cybersecurity",
     "slug": "linux-investigation",
-    "date": "2026-03-06T06:06:05",
+    "date": "2026-03-14T20:36:15",
     "desc": "Notes on Linux investigation.",
     "thumb": "/blog/assets/thumbnails/linux-investigation.png",
     "url": "/blog/posts/Cybersecurity/linux-investigation.html"
-  },
-  {
-    "title": "Now on IRC",
-    "category": "Misc",
-    "slug": "now-on-irc",
-    "date": "2026-03-06T05:51:24",
-    "desc": "Ratintosh joins IRC!",
-    "thumb": "/blog/assets/thumbnails/now-on-irc.gif",
-    "url": "/blog/posts/Misc/now-on-irc.html"
   }
 ]

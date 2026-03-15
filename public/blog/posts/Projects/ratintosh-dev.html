@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="title" content="Ratintosh.dev">
+<meta name="thumbnail" content="/blog/assets/thumbnails/nginx.png">
+<meta name="description" content="My story of trying to get nginx working.">
+<meta name="date" content="Mar 14th 2026">
+</head>
+
+<body>
+
+<article>
+
+<h1>Creating Ratintoh.dev</h1>
+
+<p>
+Recently I was browsing through the perks included with the GitHub Student Developer Pack and noticed something interesting: a free <strong>.dev domain for one year</strong> from Name.com. Naturally, I claimed it immediately.
+</p>
+
+<p>
+So now I had a domain: <strong>ratintosh.dev</strong>.
+</p>
+
+<p>
+The next step was figuring out how to actually host something on it.
+</p>
+
+<p>
+I already had a free server running through Oracle, so I created a new instance to host the site. I accidentally chose <strong>Oracle Linux</strong> as the base image, because I was clicking through the setup without reading (oops). That decision would come back to haunt me later.
+</p>
+
+<p>
+With the server ready, I started looking into how to host a website. From what I read, it looked fairly straightforward. Point nginx to the SSL certs, host the site with nginx, and then add the IP to the A record.
+</p>
+
+<p>
+But before I could even do that, I ran into my first obstacle: <strong>SSL</strong>.
+</p>
+
+<h2>The SSL nightmare</h2>
+
+<p>
+For whatever reason, HTTPS is basically mandatory on my domain. My domain provider was kind enough to include a free SSL certificate, which sounded great! (in theory).
+</p>
+
+<p>
+But in practice, it was probably more confusing than using something like LetsEncrypt.
+</p>
+
+<p>
+They asked me for a <strong>Certificate Signing Request (CSR)</strong>. I generated one on the server, submitted it to them, and after a few minutes they sent me back two blobs of plaintext: a server certificate and a CA certificate.
+</p>
+
+<p>
+And that was it.
+</p>
+
+<p>
+No instructions. No explanation of where the files were supposed to go or how to use them.
+</p>
+
+<p>
+Most guides online were using <strong>Certbot with Let’s Encrypt</strong>, which automatically handles everything. Since I wasn’t doing that, a lot of tutorials just weren’t helpful.
+</p>
+
+<p>
+So I put the SSL problem aside for the moment and decided to at least get <strong>nginx</strong> installed.
+</p>
+
+<h2>Installing nginx</h2>
+
+<p>Installing nginx itself was easy enough:</p>
+
+<pre><code>dnf install nginx</code></pre>
+
+<p>Done.</p>
+
+<p>
+But then came the process of actually configuring it.
+</p>
+
+<p>
+The guides I found online were telling me to place certificates in directories that didn’t exist on my system. So I created them manually and updated <code>nginx.conf</code> to point to the certificate files.
+</p>
+
+<p>
+Then I tried starting nginx.
+</p>
+
+<p>
+It didn’t work.
+</p>
+
+<p>
+At first I assumed it was a simple permissions issue. nginx couldn’t read the certificate files, so I tried the usual fixes:
+</p>
+
+<ul>
+<li>changing file permissions with <code>chmod</code></li>
+<li>changing ownership with <code>chown</code></li>
+<li>moving the files to different directories</li>
+<li>making sure the nginx user had access</li>
+</ul>
+
+<p>
+Everything looked correct, but nginx still refused to read the files.
+</p>
+
+<p>
+I was completely confused.
+</p>
+
+<p>
+After several hours of digging through the internet , I finally stumbled across a comment mentioning <strong>SELinux</strong>.
+</p>
+
+<h2>The SELinux problem</h2>
+
+<p>
+It turns out Red Hat–based systems (which includes Oracle Linux) have an additional security layer called <strong>SELinux</strong>. Even if file permissions are correct, SELinux can still block services from accessing files if the <em>security context</em> isn’t right.
+</p>
+
+<p>
+Most tutorials never mentioned this because most people were doing these setups on <strong>Debian or Ubuntu</strong>, where SELinux isn’t usually involved.
+</p>
+
+<p>
+Once I updated the SELinux context for the directory holding the certificates, I restarted nginx again.
+</p>
+
+<p>
+And finally…
+</p>
+
+<p>
+It worked.
+</p>
+
+<p>
+I was greeted by the <strong>default nginx HTML page</strong>.
+</p>
+
+<p>
+After several hours of debugging, that default page felt like a huge win to me.
+</p>
+
+<p>
+At that point I was exhausted, but I wanted to go one step further and host a simple test page.
+</p>
+
+<p>
+That’s when I discovered another issue: my nginx installation wasn’t structured like the examples I kept seeing online.
+</p>
+
+<p>Most guides referenced directories like:</p>
+
+<pre><code>/etc/nginx/sites-available
+/etc/nginx/sites-enabled</code></pre>
+
+<p>
+But on my system those directories didn’t exist.
+</p>
+
+<p>
+After some more digging, I learned that this layout is mostly used on <strong>Debian-based systems</strong>. Since I installed nginx through <code>dnf</code>, the configuration structure was different.
+</p>
+
+<p>
+At this point I called it a night.
+</p>
+
+<h2>Fixing it the next day</h2>
+
+<p>
+The next day I came back with and decided to just recreate the structure most guides expected.
+</p>
+
+<p>So I:</p>
+
+<ul>
+<li>created a <code>/var/www/</code> directory for site files</li>
+<li>added <code>sites-available</code> and <code>sites-enabled</code></li>
+<li>created a new nginx config for my domain</li>
+<li>symlinked it into <code>sites-enabled</code></li>
+<li>pointed it to my SSL certificates</li>
+</ul>
+
+<p>
+After a bit more troubleshooting (and more SELinux adjustments), everything finally worked.
+</p>
+
+<p>
+I could now serve my own <code>index.html</code> from <strong>ratintosh.dev</strong>.
+</p>
+
+<p>
+Initially I just wanted to put up a quick “under construction” page.
+</p>
+
+<p>
+But that quickly turned into experimenting with styles, which somehow turned into building the entire site.
+</p>
+
+<p>
+The result is the website you can see below:
+</p>
+
+<img src="/blog/assets/media/ratintosh-dev.png">
+
+<h2>Final thoughts</h2>
+
+<p>
+What started as "I'll just set up a simple page" turned into several hours of debugging nginx, figuring out SSL certificates, and learning about SELinux the hard way.
+</p>
+
+<p>
+Also, Oracle Linux is... interesting. I might switch to something else in the future.
+</p>
+
+<p>
+But at least the site works now.
+</p>
+
+<p>
+Even if the process was painful.
+</p>
+
+</article>
+
+</body>
+</html>
