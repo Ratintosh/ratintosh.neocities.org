@@ -135,9 +135,9 @@
     (() => {
       const summonButton = document.getElementById("summon-sniffilwiz");
       const ball = document.querySelector(".ball");
-      const toddTrack = new Audio("img/todd.mp3");
-      toddTrack.loop = true;
-      toddTrack.preload = "auto";
+      // const toddTrack = new Audio("img/todd.mp3");
+      // toddTrack.loop = true;
+      // toddTrack.preload = "auto";
 
       if (!summonButton || !ball) return;
 
@@ -148,9 +148,9 @@
         ball.style.opacity = "1";
         ball.style.pointerEvents = "auto";
 
-        if (toddTrack.paused) {
-          toddTrack.play().catch(() => {});
-        }
+        // if (toddTrack.paused) {
+        //   toddTrack.play().catch(() => {});
+        // }
       });
     })();
   </script>

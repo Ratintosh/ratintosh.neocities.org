@@ -8,10 +8,10 @@ const ball = document.querySelector(".ball");
 const ballProps = gsap.getProperty(ball);
 const radius = ball.getBoundingClientRect().width / 2;
 const tracker = InertiaPlugin.track(ball, "x,y")[0];
-const bumperSound = new Audio("/img/bumper.mp3");
-bumperSound.preload = "auto";
-const maxConcurrentBumps = 8;
-let activeBumps = 0;
+// const bumperSound = new Audio("/img/bumper.mp3");
+// bumperSound.preload = "auto";
+// const maxConcurrentBumps = 8;
+// let activeBumps = 0;
 
 let vw = window.innerWidth;
 let vh = window.innerHeight;
@@ -43,20 +43,20 @@ window.addEventListener("resize", () => {
 });
 
 function playBumper() {
-  if (activeBumps >= maxConcurrentBumps) return;
+    // if (activeBumps >= maxConcurrentBumps) return;
 
-  const sound = bumperSound.cloneNode();
-  activeBumps += 1;
+    // const sound = bumperSound.cloneNode();
+    // activeBumps += 1;
 
-  const cleanup = () => {
-    activeBumps = Math.max(0, activeBumps - 1);
-    sound.removeEventListener("ended", cleanup);
-    sound.removeEventListener("error", cleanup);
-  };
+    // const cleanup = () => {
+    // activeBumps = Math.max(0, activeBumps - 1);
+    // sound.removeEventListener("ended", cleanup);
+    // sound.removeEventListener("error", cleanup);
+    // };
 
-  sound.addEventListener("ended", cleanup);
-  sound.addEventListener("error", cleanup);
-  sound.play().catch(cleanup);
+    // sound.addEventListener("ended", cleanup);
+    // sound.addEventListener("error", cleanup);
+    // sound.play().catch(cleanup);
 }
 
 function animateBounce(x = "+=0", y = "+=0", vx = "auto", vy = "auto") {
