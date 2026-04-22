@@ -254,6 +254,24 @@ td {
   border-radius: 2px;
 }
 
+.summon-btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: linear-gradient(to bottom, #d8f5ff 0%, #a9dff4 100%);
+  border: 2px solid #e7fdff;
+  color: #24566f;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  box-shadow: 2px 2px 0 #8ec3d9;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.summon-btn:hover {
+  filter: brightness(1.05);
+}
+
 
 a:link {
   text-decoration: none;
@@ -460,4 +478,12 @@ grid-row-gap: 4px;
 }
 #statuscafe-content {
     margin: 0 1em 0.5em 1em;
+}
+
+.ball {
+  width: 125px;
+  height: 125px;
+  box-sizing: border-box;
+  will-change: transform;
+  position: absolute;
 }

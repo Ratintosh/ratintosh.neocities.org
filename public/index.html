@@ -12,9 +12,15 @@
   <link rel="icon" type="image/x-icon" href="/img/icns/earth.ico">
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomBounce.min.js" integrity="sha512-PJRGw5+wyjY5yrbQnhzzo0xE9NSx71YD6LPdm9TqjMhR2+ak4Id5exTqt0dcjkiz7LeReq6O4Wkyub12BJ8h4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Draggable.min.js" integrity="sha512-dgqdovLK5r/NMiV5YfWA0xC94DKGrm+6q1OZpuWHm+uBGLTck6wu58WAX9lmy8wec6cVnsgxbPJ60DtmNFnfgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/InertiaPlugin.min.js" integrity="sha512-PEhxb+AivyFXL3zZnE/TwS4sgWRDZRF7aTGVGkiF7ej++sMKTtN+ZfrEo8lPxrfMIOws/1RkVc1Apua29ktRwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+  <img class="ball" src="/img/sniffilwiz.gif" width="50px" alt="" style="display: unset; visibility: hidden; opacity: 0; pointer-events: none; translate: none; rotate: none; scale: none; touch-action: none; cursor: grab; transform: translate(-50%, -50%) translate3d(0px, 0.5px, 0px); user-select: none; z-index: 1000;">
+  <script src="bounce.js"></script>
   <div class="container">
     <header>
       <h1>Home</h1>
@@ -50,9 +56,14 @@
                 <p>You are currently viewing [ v2.1 ] of my website, adapted from a template from <a
                     href="https://websetsbylynn.neocities.org/" target="_blank">Websets by Lynn</a></p>
                 <p>Website should now be synced to a GitHub repository.</p>
-                
               </div>
             </div>
+            <br>
+                <b>Note to visitors: DO NOT SPAWN SNIFFLEWIZ.</b>
+                <p>I have no idea how he got here, I have no idea what he's doing here, but somethin's up with this guy.</p>
+                <br>
+                <a href="#" id="summon-sniffilwiz" type="button">[ SPAWN SNIFFILWIZ ]</a>
+                <br>
             <br>
             <h1>Stuff</h1>
             <div class="suggestions">
@@ -120,6 +131,29 @@
 
 
   <script src="visitors.js"></script>
+  <script>
+    (() => {
+      const summonButton = document.getElementById("summon-sniffilwiz");
+      const ball = document.querySelector(".ball");
+      const toddTrack = new Audio("img/todd.mp3");
+      toddTrack.loop = true;
+      toddTrack.preload = "auto";
+
+      if (!summonButton || !ball) return;
+
+      summonButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        ball.style.display = "block";
+        ball.style.visibility = "visible";
+        ball.style.opacity = "1";
+        ball.style.pointerEvents = "auto";
+
+        if (toddTrack.paused) {
+          toddTrack.play().catch(() => {});
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>
