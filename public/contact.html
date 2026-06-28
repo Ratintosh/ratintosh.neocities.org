@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratintosh's Site</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/css2.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/img/icns/earth.ico">
+    <style>
+
+        .window-content {
+            font-family: 'calibri', monospace;
+            font-size: 13px;
+        }
+        .cd-player-table {
+            width: 100%;
+            border:0px;
+            font-family: 'calibri', monospace;
+            font-size: 12px;
+            table-layout: fixed;
+            
+            
+        }
+
+        .cd-player-text {
+            white-space: normal;
+            overflow-wrap: anywhere;
+            word-break: normal;
+            padding-left:10px;
+            padding-right:10px;
+        }
+
+
+        .content-area main .window-content p {
+            margin: 0;
+        }
+
+        .cd-Body {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .cd-Body > .window.active {
+            width: 170px;
+            flex: 0 0 170px;
+        }
+
+        .username {
+            font-weight: lighter;
+            font-size:18px;
+            padding-top:10px;
+        }
+        .subname {
+            font-size:14px;
+            color:rgb(129, 129, 129);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Contact</h1>
+        </header>
+
+        <div class="content-area">
+            <aside>
+                <iframe src="templates/navbar.html" style="border:none;" class="navbariframe"></iframe>
+            </aside>
+
+            <main>
+                <div class="window">
+                    <div class="window-top">
+                        <div class="window-title"><img src="img/icns/wlm.ico" class="icon">Contact</div>
+                    </div>
+                    <div class="window-content">
+                        <h1>Contact</h1>
+                        <!-- <img src="/img/snail-mail.gif"> -->
+                        <p>Looking to contact me? Below are some ways you can reach out to me, listed in order of preference. Feel free to use whichever is most convenient for you though, I don't mind!</p>
+                        <table class="cd-player-table">
+                            <tr>
+                                <td style="width:64px;">
+                                    <img src="/img/icns/social/wlm.ico" style="width:100%; word-wrap: break-word">
+                                    
+                                </td>
+                                <td class="cd-player-text">
+                                    <h1 class="username">E-Mail</h1>
+                                    <p class="subname">webmaster@ratintosh.dev</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:64px;">
+                                    <img src="/img/icns/social/discord2.ico" style="width:100%; word-wrap: break-word">
+                                    
+                                </td>
+                                <td class="cd-player-text">
+                                    <h1 class="username">Discord</h1>
+                                    <p class="subname">Ratintosh</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width:64px;">
+                                    <img src="/img/icns/social/IRC.ico" style="width:100%; word-wrap: break-word">
+                                    
+                                </td>
+                                <td class="cd-player-text">
+                                    <h1 class="username">Internet Relay Chat</h1>
+                                    <p class="subname">Ratintosh</p>
+                                    <i class="subname">I frequent ##netizen on libera.chat!</i>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <p>Alternatively, you can use my <a href="https://www3.cbox.ws/box/?boxid=3552558&boxtag=oledea">cbox</a> chat, or sign my <a href="https://ratintosh.neocities.org/guestbook">guestbook</a>! I check them both pretty regularly.</p>
+                        
+                    </div>
+
+                </div>
+            </main>
+            <aside>
+                <iframe src="templates/rightbar.html" style="border:none;" class="navbariframe"></iframe>
+            </aside>
+        </div>
+
+        <iframe src="templates/footer.html" style="border:none;"></iframe>
+    </div>
+
+
+</body>
+
+</html>
